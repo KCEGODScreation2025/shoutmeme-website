@@ -779,15 +779,26 @@
 
     <script>
         function showEmailForm(tier = 'foundation') {
-            document.getElementById('emailModal').style.display = 'block';
+            const modal = document.getElementById('emailModal');
+            if (!modal) {
+                console.error('Email modal not found');
+                return;
+            }
+            
+            modal.style.display = 'block';
             
             // Store the tier for later use
-            document.getElementById('emailModal').setAttribute('data-tier', tier);
+            modal.setAttribute('data-tier', tier);
             
             // Update modal content based on tier
-            const title = document.getElementById('emailModal').querySelector('h2');
-            const subtitle = document.getElementById('emailModal').querySelector('.form-subtitle');
-            const button = document.getElementById('emailModal').querySelector('.submit-btn');
+            const title = modal.querySelector('h2');
+            const subtitle = modal.querySelector('.form-subtitle');
+            const button = modal.querySelector('.submit-btn');
+            
+            if (!title || !subtitle || !button) {
+                console.error('Modal elements not found');
+                return;
+            }
             
             if (tier === 'transformation') {
                 title.textContent = 'SHOUT Transformation - $597';
@@ -806,6 +817,8 @@
                 subtitle.textContent = 'Enter your email to receive free access to the SHOUT Method foundation materials!';
                 button.textContent = 'Get Free Access';
             }
+            
+            console.log('Modal opened for tier:', tier);
         }
         
         function openModal() {
@@ -819,7 +832,10 @@
         function handleEmailSubmit(event) {
             event.preventDefault();
             
-            const tier = document.getElementById('emailModal').getAttribute('data-tier') || 'foundation';
+            const modal = document.getElementById('emailModal');
+            const tier = modal.getAttribute('data-tier') || 'foundation';
+            
+            console.log('Form submitted for tier:', tier);
             
             const formData = {
                 name: document.getElementById('name').value,
@@ -831,7 +847,7 @@
             // Store email for future use
             localStorage.setItem('user_email', formData.email);
             
-            // Submit to Mailchimp (you'll need to replace with your actual Mailchimp endpoint)
+            // Submit to Mailchimp
             submitToMailchimp(formData);
             
             // Hide form and show success message
