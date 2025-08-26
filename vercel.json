@@ -10,54 +10,50 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/home.html"
+      "source": "/",
+      "destination": "/home.html"
     },
     {
-      "src": "/home",
-      "dest": "/home.html"
+      "source": "/home",
+      "destination": "/home.html"
     },
     {
-      "src": "/about",
-      "dest": "/about.html"
+      "source": "/about",
+      "destination": "/about.html"
     },
     {
-      "src": "/method",
-      "dest": "/method_page.html"
+      "source": "/method",
+      "destination": "/method_page.html"
     },
     {
-      "src": "/urgent-kit",
-      "dest": "/urgent_shout_kit.html"
+      "source": "/urgent-kit",
+      "destination": "/urgent_shout_kit.html"
     },
     {
-      "src": "/masterclass",
-      "dest": "/masterclass.html"
+      "source": "/masterclass",
+      "destination": "/masterclass.html"
     },
     {
-      "src": "/film",
-      "dest": "/filmmoviepage.html"
+      "source": "/film",
+      "destination": "/filmmoviepage.html"
     },
     {
-      "src": "/contact",
-      "dest": "/contact.html"
+      "source": "/contact",
+      "destination": "/contact.html"
     },
     {
-      "src": "/ebook",
-      "dest": "/ebook.html"
+      "source": "/ebook",
+      "destination": "/ebook.html"
     },
     {
-      "src": "/getgift",
-      "dest": "/getgift.html"
+      "source": "/getgift",
+      "destination": "/getgift.html"
     },
     {
-      "src": "/chp3",
-      "dest": "/chp3.html"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/chp3",
+      "destination": "/chp3.html"
     }
   ],
   "headers": [
