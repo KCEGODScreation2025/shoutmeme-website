@@ -459,7 +459,7 @@
                          <div id="giftFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef;">
                              <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get FREE Chap 3, Obstacles to Opportunities, Ebook Guide Now!</h3>
                              
-                             <button type="button" class="cta-button free" onclick="showEmailForm('masterclass')" style="margin-top: 1rem;">
+                             <button type="button" class="cta-button free" onclick="showEmailForm('chapter3')" style="margin-top: 1rem;">
                                  <span class="btn-text">GET FREE Chapter 3, Obstacles to Opportunity, of eBook</span>
                              </button>
                          </div>
@@ -491,14 +491,16 @@
                              <li>Bonus: SHOUT Method workbook</li>
                          </ul>
                          
-                         <!-- Email Collection for Ebook -->
+                         <!-- Stripe Buy Button for Ebook -->
                          <div id="paymentFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef;">
                              <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get Entire Ebook Guide Now!</h3>
                              <p style="color: #666; margin-bottom: 2rem; text-align: center;">Ebook Sales for $3.33</p>
                              
-                             <button type="button" class="cta-button" onclick="showEmailForm('ebook')" style="font-size: 1.1em; padding: 18px 35px; width: 100%;">
-                                 🚀 GET ENTIRE EBOOK NOW - $3.33 🚀
-                             </button>
+                             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+                             <stripe-buy-button 
+                                 buy-button-id="buy_btn_1RzoyuKF3KAmlaAMdLDCBLS2" 
+                                 publishable-key="pk_live_51RbW5fKF3KAmlaAM1ppxLXKhdgn8bOZzpw93Hmy8nrwN7FpV4LB1EiHO71QBCD0BPmVMAA5aGnsokq3wcgDODLB200vppeaaK5">
+                             </stripe-buy-button>
                          </div>
                      </div>
                  </div>
@@ -795,7 +797,7 @@
             const title = document.getElementById('emailModalTitle');
             const subtitle = document.getElementById('emailModalSubtitle');
             
-            if (productType === 'ebook') {
+            if (productType === 'chapter3') {
                 title.textContent = 'Get Your Free Chapter 3 Ebook';
                 subtitle.textContent = 'Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook.';
             } else if (productType === 'masterclass') {
@@ -852,7 +854,7 @@
                 closeEmailModal();
                 
                 // Show success message
-                alert('Thank you! Your free Chapter 3 ebook has been sent to your email. Check your inbox!');
+                alert('You have been added to email for SHOUT THROUGH ANYTHING eBook, Chapter 3 Only. Check your inbox for your free chapter!');
                 
                 // Reset button state
                 btnText.style.display = 'inline';
