@@ -491,16 +491,14 @@
                              <li>Bonus: SHOUT Method workbook</li>
                          </ul>
                          
-                         <!-- Stripe Buy Button for Ebook -->
+                         <!-- Email Collection for Ebook -->
                          <div id="paymentFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef;">
                              <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get Entire Ebook Guide Now!</h3>
                              <p style="color: #666; margin-bottom: 2rem; text-align: center;">Ebook Sales for $3.33</p>
                              
-                             <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-                             <stripe-buy-button 
-                                 buy-button-id="buy_btn_1RzoyuKF3KAmlaAMdLDCBLS2" 
-                                 publishable-key="pk_live_51RbW5fKF3KAmlaAM1ppxLXKhdgn8bOZzpw93Hmy8nrwN7FpV4LB1EiHO71QBCD0BPmVMAA5aGnsokq3wcgDODLB200vppeaaK5">
-                             </stripe-buy-button>
+                             <button type="button" class="cta-button" onclick="showEmailForm('ebook')" style="font-size: 1.1em; padding: 18px 35px; width: 100%;">
+                                 🚀 GET ENTIRE EBOOK NOW - $3.33 🚀
+                             </button>
                          </div>
                      </div>
                  </div>
@@ -709,185 +707,7 @@
         
         
         
-                 // Payment Functions
-         let stripe, card;
-         
-         // Initialize Stripe when page loads
-         document.addEventListener('DOMContentLoaded', function() {
-             // Replace with your actual Stripe publishable key
-             stripe = Stripe('pk_test_51RbW5fKF3KAmlaAMZdgxOovHvdAdRxQJhAtJ8BoBMxS3zLzoBlc7d362YdJnTT7w5o2tZ4oQel33eiRxTFHgnF2s00L6KJdqCC');
-             
-             // Create card element for main ebook
-             const elements = stripe.elements();
-             card = elements.create('card', {
-                 style: {
-                     base: {
-                         fontSize: '16px',
-                         color: '#424770',
-                         '::placeholder': {
-                             color: '#aab7c4',
-                         },
-                     },
-                     invalid: {
-                         color: '#9e2146',
-                     },
-                 },
-             });
-             
-             // Mount card element
-             card.mount('#cardElement');
-             
-             // Handle card errors
-             card.addEventListener('change', function(event) {
-                 const displayError = document.getElementById('cardErrors');
-                 if (event.error) {
-                     displayError.textContent = event.error.message;
-                 } else {
-                     displayError.textContent = '';
-                 }
-             });
-             
 
-         });
-        
-        
-        
-        function handlePayment(event) {
-            event.preventDefault();
-            
-            // Show loading state
-            const btnText = document.querySelector('#paymentForm .btn-text');
-            const loading = document.querySelector('#paymentForm .loading');
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            
-            btnText.style.display = 'none';
-            loading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('paymentName').value,
-                email: document.getElementById('paymentEmail').value,
-                amount: 333, // $3.33 in cents
-                timestamp: new Date().toISOString(),
-                source: 'SHOUT_Method_Page_Purchase'
-            };
-            
-            // Create payment method
-            stripe.createPaymentMethod({
-                type: 'card',
-                card: card,
-                billing_details: {
-                    name: formData.name,
-                    email: formData.email,
-                },
-            }).then(function(result) {
-                if (result.error) {
-                    // Handle error
-                    showPaymentError(result.error.message);
-                } else {
-                    // Payment method created successfully
-                    // In a real implementation, you would send this to your server
-                    // For now, we'll simulate a successful payment
-                    simulatePaymentSuccess(formData);
-                }
-            });
-        }
-        
-        function simulatePaymentSuccess(formData) {
-            // Simulate payment processing
-            setTimeout(() => {
-                // Hide form and show success message
-                document.getElementById('paymentForm').style.display = 'none';
-                document.getElementById('paymentSuccess').style.display = 'block';
-                
-                // Store purchase data
-                const purchases = JSON.parse(localStorage.getItem('shout_purchases') || '[]');
-                purchases.push({
-                    ...formData,
-                    purchaseId: 'purchase_' + Date.now(),
-                    status: 'completed'
-                });
-                localStorage.setItem('shout_purchases', JSON.stringify(purchases));
-                
-                // Track conversion
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'purchase', {
-                        'transaction_id': formData.purchaseId,
-                        'value': 3.33,
-                        'currency': 'USD',
-                        'items': [{
-                            'item_id': 'shout_method_ebook',
-                            'item_name': 'Complete SHOUT Method Ebook',
-                            'price': 3.33,
-                            'quantity': 1
-                        }]
-                    });
-                }
-                
-                console.log('Purchase completed:', formData);
-                
-            }, 2000);
-        }
-        
-                 function showPaymentError(message) {
-             document.getElementById('paymentForm').style.display = 'none';
-             document.getElementById('paymentError').style.display = 'block';
-             document.getElementById('errorMessage').textContent = message;
-             
-             // Reset button state
-             const btnText = document.querySelector('#paymentForm .btn-text');
-             const loading = document.querySelector('#paymentForm .loading');
-             btnText.style.display = 'inline';
-             loading.style.display = 'none';
-             
-             // Show form again after 3 seconds
-             setTimeout(() => {
-                 document.getElementById('paymentForm').style.display = 'block';
-                 document.getElementById('paymentError').style.display = 'none';
-             }, 3000);
-         }
-        
-                 function accessEbook() {
-             // Check if user has purchased
-             const purchases = JSON.parse(localStorage.getItem('shout_purchases') || '[]');
-             const hasPurchased = purchases.some(purchase => purchase.status === 'completed');
-             
-             if (hasPurchased) {
-                 // Open ebook in new tab
-                 window.open('ebook.html', '_blank');
-             } else {
-                 alert('Please complete your purchase to access the ebook.');
-             }
-         }
-         
-
-        
-                 // Check purchase status on page load
-         function checkPurchaseStatus() {
-             // Check main ebook purchase
-             const purchases = JSON.parse(localStorage.getItem('shout_purchases') || '[]');
-             const hasPurchased = purchases.some(purchase => purchase.status === 'completed');
-             
-             if (hasPurchased) {
-                 // User has purchased, hide payment form and show access button
-                 const paymentFormSection = document.getElementById('paymentFormSection');
-                 if (paymentFormSection) {
-                     paymentFormSection.innerHTML = `
-                         <div style="text-align: center; padding: 2rem;">
-                             <h3 style="color: #27ae60; margin-bottom: 1rem;">✅ You Already Own This!</h3>
-                             <p style="color: #666; margin-bottom: 2rem;">You have already purchased the complete SHOUT Method ebook.</p>
-                             <button onclick="accessEbook()" class="cta-button">Access Your Ebook Now</button>
-                         </div>
-                     `;
-                 }
-             }
-             
-
-         }
-        
-        // Run check on page load
-        document.addEventListener('DOMContentLoaded', checkPurchaseStatus);
     </script>
 
     <!-- Email Form Modal -->
@@ -921,39 +741,7 @@
         </div>
     </div>
 
-    <!-- Payment Form Modal -->
-    <div id="paymentModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closePaymentModal()">&times;</span>
-            <h2 id="paymentModalTitle">Complete Your Purchase</h2>
-            <p id="paymentModalSubtitle">Enter your payment details to complete your purchase.</p>
-            
-            <form id="modalPaymentForm" onsubmit="handleModalPayment(event)">
-                <div class="form-group">
-                    <label for="modalPaymentName">Full Name *</label>
-                    <input type="text" id="modalPaymentName" name="paymentName" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalPaymentEmail">Email Address *</label>
-                    <input type="email" id="modalPaymentEmail" name="paymentEmail" required placeholder="Enter your email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalCardElement">Credit Card Information *</label>
-                    <div id="modalCardElement" style="padding: 1rem; border: 2px solid #ecf0f1; border-radius: 10px; background: white;">
-                        <!-- Stripe Card Element will be inserted here -->
-                    </div>
-                    <div id="modalCardErrors" style="color: #e74c3c; font-size: 0.9rem; margin-top: 0.5rem;"></div>
-                </div>
-                
-                <button type="submit" class="cta-button" style="margin-top: 1rem; width: 100%;">
-                    <span class="btn-text" id="modalPaymentButtonText">Complete Purchase</span>
-                    <span class="loading" style="display: none;">Processing...</span>
-                </button>
-            </form>
-        </div>
-    </div>
+
 
     <style>
         .modal {
@@ -999,37 +787,6 @@
 
     <script>
         let currentProductType = '';
-        let modalCard;
-        
-        // Initialize modal card element when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create card element for modal
-            const elements = stripe.elements();
-            modalCard = elements.create('card', {
-                style: {
-                    base: {
-                        fontSize: '16px',
-                        color: '#424770',
-                        '::placeholder': {
-                            color: '#aab7c4',
-                        },
-                    },
-                    invalid: {
-                        color: '#9e2146',
-                    },
-                },
-            });
-            
-            // Handle card errors
-            modalCard.addEventListener('change', function(event) {
-                const displayError = document.getElementById('modalCardErrors');
-                if (event.error) {
-                    displayError.textContent = event.error.message;
-                } else {
-                    displayError.textContent = '';
-                }
-            });
-        });
         
         function showEmailForm(productType) {
             currentProductType = productType;
@@ -1039,18 +796,18 @@
             const subtitle = document.getElementById('emailModalSubtitle');
             
             if (productType === 'ebook') {
-                title.textContent = 'Get Your Free Ebook Guide';
-                subtitle.textContent = 'Enter your email to receive your free guide and be notified when ebook sales begin.';
+                title.textContent = 'Get Your Free Chapter 3 Ebook';
+                subtitle.textContent = 'Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook.';
             } else if (productType === 'masterclass') {
-                title.textContent = 'Get Your Free Ebook Guide';
-                subtitle.textContent = 'Enter your email to receive your free guide and be notified when masterclass sales begin.';
+                title.textContent = 'Get Your Free Chapter 3 Ebook';
+                subtitle.textContent = 'Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook.';
             }
             
             // Show modal
             document.getElementById('emailModal').style.display = 'block';
             
             // Pre-fill email if available
-            const emailInput = document.getElementById('modalEmail');
+            const emailInput = document.getElementById('modalEmailAddress');
             if (localStorage.getItem('user_email')) {
                 emailInput.value = localStorage.getItem('user_email');
             }
@@ -1058,15 +815,10 @@
         
         function closeEmailModal() {
             document.getElementById('emailModal').style.display = 'none';
-            document.getElementById('emailForm').reset();
+            document.getElementById('modalEmailForm').reset();
         }
         
-        function closePaymentModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-            document.getElementById('modalPaymentForm').reset();
-        }
-        
-        function handleEmailSubmit(event) {
+        function handleModalEmailSubmit(event) {
             event.preventDefault();
             
             // Show loading state
@@ -1080,8 +832,8 @@
             
             // Get form data
             const formData = {
-                firstName: document.getElementById('modalFirstName').value,
-                email: document.getElementById('modalEmail').value,
+                firstName: document.getElementById('modalEmailName').value,
+                email: document.getElementById('modalEmailAddress').value,
                 challenge: document.getElementById('modalChallenge').value,
                 productType: currentProductType,
                 timestamp: new Date().toISOString(),
@@ -1091,13 +843,16 @@
             // Store email for future use
             localStorage.setItem('user_email', formData.email);
             
+            // Submit to Mailchimp
+            submitToMailchimp(formData);
+            
             // Simulate email submission
             setTimeout(() => {
                 // Close email modal
                 closeEmailModal();
                 
-                // Show payment modal
-                showPaymentModal(formData);
+                // Show success message
+                alert('Thank you! Your free Chapter 3 ebook has been sent to your email. Check your inbox!');
                 
                 // Reset button state
                 btnText.style.display = 'inline';
@@ -1106,126 +861,47 @@
             }, 1500);
         }
         
-        function showPaymentModal(emailData) {
-            // Set modal content based on product type
-            const title = document.getElementById('paymentModalTitle');
-            const subtitle = document.getElementById('paymentModalSubtitle');
-            const buttonText = document.getElementById('modalPaymentButtonText');
+        function submitToMailchimp(formData) {
+            const MAILCHIMP_API_KEY = '9328d1805eda3bf1327f2255808232d9-us14';
+            const MAILCHIMP_AUDIENCE_ID = 'a13d8a9e0b';
+            const MAILCHIMP_DC = 'us1';
             
-            if (currentProductType === 'ebook') {
-                title.textContent = 'Complete SHOUT Method Ebook - $3.33';
-                subtitle.textContent = 'Complete your purchase to get instant access to the complete SHOUT Method ebook.';
-                buttonText.textContent = 'Pay $3.33 & Get Access';
-            } else if (currentProductType === 'masterclass') {
-                title.textContent = 'SHOUT Masterclass - Coming Soon';
-                subtitle.textContent = 'You\'ll be notified when masterclass sales begin. For now, enjoy your free guide!';
-                buttonText.textContent = 'Get Notified';
-            }
+            const url = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`;
             
-            // Pre-fill form with email data
-            document.getElementById('modalPaymentName').value = emailData.firstName + ' ' + (emailData.firstName || '');
-            document.getElementById('modalPaymentEmail').value = emailData.email;
-            
-            // Show modal
-            document.getElementById('paymentModal').style.display = 'block';
-            
-            // Mount card element
-            modalCard.mount('#modalCardElement');
-        }
-        
-        function handleModalPayment(event) {
-            event.preventDefault();
-            
-            if (currentProductType === 'masterclass') {
-                // For masterclass, just close modal and show success
-                closePaymentModal();
-                alert('Thank you! You\'ll be notified when masterclass sales begin. Check your email for your free guide!');
-                return;
-            }
-            
-            // Show loading state
-            const btnText = event.target.querySelector('.btn-text');
-            const loading = event.target.querySelector('.loading');
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            
-            btnText.style.display = 'none';
-            loading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('modalPaymentName').value,
-                email: document.getElementById('modalPaymentEmail').value,
-                amount: 333, // $3.33 in cents
-                productType: currentProductType,
-                timestamp: new Date().toISOString(),
-                source: 'SHOUT_Method_Page_Modal_Purchase'
+            const data = {
+                email_address: formData.email,
+                status: 'subscribed',
+                merge_fields: {
+                    FNAME: formData.firstName || '',
+                    CHALLENGE: formData.challenge || '',
+                    PRODUCT: formData.productType || '',
+                    SOURCE: formData.source || 'Method Page'
+                }
             };
             
-            // Create payment method
-            stripe.createPaymentMethod({
-                type: 'card',
-                card: modalCard,
-                billing_details: {
-                    name: formData.name,
-                    email: formData.email,
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `apikey ${MAILCHIMP_API_KEY}`,
+                    'Content-Type': 'application/json'
                 },
-            }).then(function(result) {
-                if (result.error) {
-                    // Handle error
-                    showModalPaymentError(result.error.message);
-                } else {
-                    // Payment method created successfully
-                    // In a real implementation, you would send this to your server
-                    // For now, we'll simulate a successful payment
-                    simulateModalPaymentSuccess(formData);
-                }
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
             });
-        }
-        
-        function simulateModalPaymentSuccess(formData) {
-            // Simulate payment processing
-            setTimeout(() => {
-                // Close modal
-                closePaymentModal();
-                
-                // Show success message
-                alert('Payment Successful! You now have access to the complete SHOUT Method ebook. Check your email for download instructions.');
-                
-                // Store purchase data
-                const purchases = JSON.parse(localStorage.getItem('shout_purchases') || '[]');
-                purchases.push({
-                    ...formData,
-                    purchaseId: 'purchase_' + Date.now(),
-                    status: 'completed'
-                });
-                localStorage.setItem('shout_purchases', JSON.stringify(purchases));
-                
-                console.log('Purchase completed:', formData);
-                
-            }, 2000);
-        }
-        
-        function showModalPaymentError(message) {
-            alert('Payment Failed: ' + message);
-            
-            // Reset button state
-            const btnText = document.querySelector('#modalPaymentForm .btn-text');
-            const loading = document.querySelector('#modalPaymentForm .loading');
-            btnText.style.display = 'inline';
-            loading.style.display = 'none';
         }
         
         // Close modals when clicking outside
         window.onclick = function(event) {
             const emailModal = document.getElementById('emailModal');
-            const paymentModal = document.getElementById('paymentModal');
             
             if (event.target === emailModal) {
                 closeEmailModal();
-            }
-            if (event.target === paymentModal) {
-                closePaymentModal();
             }
         }
     </script>
