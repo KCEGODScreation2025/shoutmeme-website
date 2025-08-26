@@ -785,6 +785,9 @@
                 return;
             }
             
+            // Reset modal to show the form (not success message)
+            resetModalToForm();
+            
             modal.style.display = 'block';
             
             // Store the tier for later use
@@ -821,12 +824,48 @@
             console.log('Modal opened for tier:', tier);
         }
         
+        function resetModalToForm() {
+            const modal = document.getElementById('emailModal');
+            if (!modal) return;
+            
+            // Reset the modal content back to the original form
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2 id="modalTitle">Get Free SHOUT Foundation Access</h2>
+                    <div class="form-subtitle" id="modalSubtitle">Enter your email to receive free access to the SHOUT Method foundation materials!</div>
+                    
+                    <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">Get Free Access</button>
+                    </form>
+                    
+                    <p style="font-size: 0.9rem; color: #7f8c8d; margin-top: 1rem;">
+                        Your information is 100% secure. No spam, ever. You can unsubscribe at any time.
+                    </p>
+                </div>
+            `;
+        }
+        
         function openModal() {
             document.getElementById('emailModal').style.display = 'block';
         }
         
         function closeModal() {
             document.getElementById('emailModal').style.display = 'none';
+            // Reset modal to form when closed so next time it opens fresh
+            setTimeout(() => {
+                resetModalToForm();
+            }, 300);
         }
         
         function handleEmailSubmit(event) {
@@ -849,9 +888,6 @@
             
             // Submit to Mailchimp
             submitToMailchimp(formData);
-            
-            // Hide form and show success message
-            document.getElementById('emailForm').style.display = 'none';
             
             // Show success message
             document.querySelector('.modal-content').innerHTML = `
