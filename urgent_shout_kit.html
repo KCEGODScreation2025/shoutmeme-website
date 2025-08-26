@@ -4,7 +4,7 @@
  <meta charset="UTF-8"> 
  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
  <title>URGENT SHOUT KIT - Meme Kelly</title>
- <script src="https://js.stripe.com/v3/"></script>
+ 
  <style> 
  * { 
  margin: 0; 
@@ -572,17 +572,15 @@ move immediately. This kit is pure gold."
  <p style="margin-top: 10px; font-size: 1.1em;">That's nearly 90% OFF for immediate action-takers!</p> 
  </div>
 
- <!-- Stripe Buy Button for Urgent SHOUT Kit -->
- <div id="paymentFormSection" class="payment-form">
-     <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get Your URGENT SHOUT KIT Now</h3>
-     <p style="color: #666; margin-bottom: 2rem; text-align: center;">Urgent SHOUT Kit, $9.97</p>
-     
-     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-     <stripe-buy-button 
-         buy-button-id="buy_btn_1RzoxjKF3KAmlaAMQagqxZUj" 
-         publishable-key="pk_live_51RbW5fKF3KAmlaAM1ppxLXKhdgn8bOZzpw93Hmy8nrwN7FpV4LB1EiHO71QBCD0BPmVMAA5aGnsokq3wcgDODLB200vppeaaK5">
-     </stripe-buy-button>
- </div>
+   <!-- Email Collection for Urgent SHOUT Kit -->
+  <div id="paymentFormSection" class="payment-form">
+      <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get Your URGENT SHOUT KIT Now</h3>
+      <p style="color: #666; margin-bottom: 2rem; text-align: center;">Urgent SHOUT Kit, $9.97</p>
+      
+      <button type="button" class="cta-button" onclick="showEmailForm('urgentkit')" style="font-size: 1.1em; padding: 18px 35px; width: 100%;">
+          🚀 YES! I NEED MY BREAKTHROUGH NOW - $9.99 🚀
+      </button>
+  </div>
  
  <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">🔥 Instant Download • Secure 
 Payment • Access in 2 Minutes</p> 
@@ -834,39 +832,7 @@ padding: 18px 35px;">
         </div>
     </div>
 
-    <!-- Payment Form Modal -->
-    <div id="paymentModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closePaymentModal()">&times;</span>
-            <h2 id="paymentModalTitle">Complete Your Purchase</h2>
-            <p id="paymentModalSubtitle">Enter your payment details to complete your purchase.</p>
-            
-            <form id="modalPaymentForm" onsubmit="handleModalPayment(event)">
-                <div class="form-group">
-                    <label for="modalPaymentName">Full Name *</label>
-                    <input type="text" id="modalPaymentName" name="paymentName" required placeholder="Enter your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalPaymentEmail">Email Address *</label>
-                    <input type="email" id="modalPaymentEmail" name="paymentEmail" required placeholder="Enter your email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalCardElement">Credit Card Information *</label>
-                    <div id="modalCardElement" class="card-element">
-                        <!-- Stripe Card Element will be inserted here -->
-                    </div>
-                    <div id="modalCardErrors" class="card-errors"></div>
-                </div>
-                
-                <button type="submit" class="cta-button" style="margin-top: 1rem; width: 100%; background: linear-gradient(135deg, #fd79a8, #e84393);">
-                    <span class="btn-text" id="modalPaymentButtonText">Complete Purchase</span>
-                    <span class="loading" style="display: none;">Processing...</span>
-                </button>
-            </form>
-        </div>
-    </div>
+
 
     <style>
         .modal {
@@ -911,37 +877,7 @@ padding: 18px 35px;">
     </style>
 
     <script>
-        let modalCard;
-        
-        // Initialize modal card element when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create card element for modal
-            const elements = stripe.elements();
-            modalCard = elements.create('card', {
-                style: {
-                    base: {
-                        fontSize: '16px',
-                        color: '#424770',
-                        '::placeholder': {
-                            color: '#aab7c4',
-                        },
-                    },
-                    invalid: {
-                        color: '#9e2146',
-                    },
-                },
-            });
-            
-            // Handle card errors
-            modalCard.addEventListener('change', function(event) {
-                const displayError = document.getElementById('modalCardErrors');
-                if (event.error) {
-                    displayError.textContent = event.error.message;
-                } else {
-                    displayError.textContent = '';
-                }
-            });
-        });
+        // Simple email collection - no credit card processing
         
         function showEmailForm(productType) {
             // Show modal
@@ -959,10 +895,7 @@ padding: 18px 35px;">
             document.getElementById('emailForm').reset();
         }
         
-        function closePaymentModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-            document.getElementById('modalPaymentForm').reset();
-        }
+
         
         function handleEmailSubmit(event) {
             event.preventDefault();
@@ -989,13 +922,16 @@ padding: 18px 35px;">
             // Store email for future use
             localStorage.setItem('user_email', formData.email);
             
+            // Submit to Mailchimp
+            submitToMailchimp(formData);
+            
             // Simulate email submission
             setTimeout(() => {
                 // Close email modal
                 closeEmailModal();
                 
-                // Show payment modal
-                showPaymentModal(formData);
+                // Show success message
+                alert('Thank you! You\'ve been added to our email list. Check your email for exclusive SHOUT Method content and urgent kit details.');
                 
                 // Reset button state
                 btnText.style.display = 'inline';
@@ -1004,113 +940,29 @@ padding: 18px 35px;">
             }, 1500);
         }
         
-        function showPaymentModal(emailData) {
-            // Set modal content for urgent kit
-            const title = document.getElementById('paymentModalTitle');
-            const subtitle = document.getElementById('paymentModalSubtitle');
-            const buttonText = document.getElementById('modalPaymentButtonText');
+        function submitToMailchimp(formData) {
+            // This is a placeholder for Mailchimp integration
+            // You'll need to replace this with your actual Mailchimp endpoint
+            const mailchimpEndpoint = 'https://your-mailchimp-endpoint.com/subscribe';
             
-            title.textContent = 'URGENT SHOUT KIT - $9.99';
-            subtitle.textContent = 'Complete your purchase to get instant access to your crisis breakthrough toolkit.';
-            buttonText.textContent = 'Pay $9.99 & Get Access';
+            // For now, we'll just log the data
+            console.log('Submitting to Mailchimp:', formData);
             
-            // Pre-fill form with email data
-            document.getElementById('modalPaymentName').value = emailData.firstName + ' ' + (emailData.firstName || '');
-            document.getElementById('modalPaymentEmail').value = emailData.email;
-            
-            // Show modal
-            document.getElementById('paymentModal').style.display = 'block';
-            
-            // Mount card element
-            modalCard.mount('#modalCardElement');
+            // In production, you would send this to your Mailchimp endpoint
+            // fetch(mailchimpEndpoint, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(formData)
+            // });
         }
-        
-        function handleModalPayment(event) {
-            event.preventDefault();
-            
-            // Show loading state
-            const btnText = event.target.querySelector('.btn-text');
-            const loading = event.target.querySelector('.loading');
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            
-            btnText.style.display = 'none';
-            loading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('modalPaymentName').value,
-                email: document.getElementById('modalPaymentEmail').value,
-                amount: 999, // $9.99 in cents
-                productType: 'urgentkit',
-                timestamp: new Date().toISOString(),
-                source: 'SHOUT_Urgent_Kit_Page_Modal_Purchase'
-            };
-            
-            // Create payment method
-            stripe.createPaymentMethod({
-                type: 'card',
-                card: modalCard,
-                billing_details: {
-                    name: formData.name,
-                    email: formData.email,
-                },
-            }).then(function(result) {
-                if (result.error) {
-                    // Handle error
-                    showModalPaymentError(result.error.message);
-                } else {
-                    // Payment method created successfully
-                    // In a real implementation, you would send this to your server
-                    // For now, we'll simulate a successful payment
-                    simulateModalPaymentSuccess(formData);
-                }
-            });
-        }
-        
-        function simulateModalPaymentSuccess(formData) {
-            // Simulate payment processing
-            setTimeout(() => {
-                // Close modal
-                closePaymentModal();
-                
-                // Show success message
-                alert('Payment Successful! You now have access to your URGENT SHOUT KIT. Check your email for instant download access.');
-                
-                // Store purchase data
-                const purchases = JSON.parse(localStorage.getItem('shout_urgent_kit_purchases') || '[]');
-                purchases.push({
-                    ...formData,
-                    purchaseId: 'purchase_' + Date.now(),
-                    status: 'completed'
-                });
-                localStorage.setItem('shout_urgent_kit_purchases', JSON.stringify(purchases));
-                
-                console.log('Purchase completed:', formData);
-                
-            }, 2000);
-        }
-        
-        function showModalPaymentError(message) {
-            alert('Payment Failed: ' + message);
-            
-            // Reset button state
-            const btnText = document.querySelector('#modalPaymentForm .btn-text');
-            const loading = document.querySelector('#modalPaymentForm .loading');
-            btnText.style.display = 'inline';
-            loading.style.display = 'none';
-        }
-        
         // Close modals when clicking outside
         window.onclick = function(event) {
             const emailModal = document.getElementById('emailModal');
-            const paymentModal = document.getElementById('paymentModal');
             
             if (event.target === emailModal) {
                 closeEmailModal();
-            }
-            if (event.target === paymentModal) {
-                closePaymentModal();
             }
         }
     </script>

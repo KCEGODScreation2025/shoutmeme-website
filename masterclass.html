@@ -506,8 +506,8 @@
     <div id="emailModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Masterclass</h2>
-            <div class="form-subtitle">Get exclusive access to the SHOUT Masterclass</div>
+            <h2>Get Free SHOUT Foundation Access</h2>
+            <div class="form-subtitle">Enter your email to receive free access to the SHOUT Method foundation materials!</div>
             <form id="emailForm" onsubmit="handleEmailSubmit(event)">
                 <div class="form-group">
                     <label for="name">First Name</label>
@@ -517,7 +517,7 @@
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                <button type="submit" class="submit-btn">Get Access</button>
+                <button type="submit" class="submit-btn">Get Free Access</button>
             </form>
             <p style="font-size: 0.9rem; color: #7f8c8d; margin-top: 1rem;">
                 Your information is 100% secure. No spam, ever. You can unsubscribe at any time.
@@ -529,7 +529,7 @@
         <div class="hero">
             <h1>SHOUT METHOD</h1>
             <p class="subtitle">Transform Your Obstacles Into Opportunities</p>
-            <button class="cta-main" onclick="openModal()">Join The Masterclass Now</button>
+            <a href="#pricing" class="cta-main" style="text-decoration: none; display: inline-block;">View Masterclass Options</a>
         </div>
         
         <div class="value-prop">
@@ -562,7 +562,7 @@
                         <li>Access to foundation community</li>
                         <li>Sample exercises from each module</li>
                     </ul>
-                    <button class="cta-button" style="background: #ffd700; color: #333;" onclick="openModal()">Get Free Access</button>
+                    <button class="cta-button" style="background: #ffd700; color: #333;" onclick="showEmailForm()">Get Free Access</button>
                 </div>
                 
                 <div class="pricing-card">
@@ -576,11 +576,9 @@
                         <li>All materials and lifetime access</li>
                         <li>Weekly module releases and exercises</li>
                     </ul>
-                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-                    <stripe-buy-button 
-                        buy-button-id="buy_btn_1RzoxjKF3KAmlaAMdLDCBLS3" 
-                        publishable-key="pk_live_51RbW5fKF3KAmlaAM1ppxLXKhdgn8bOZzpw93Hmy8nrwN7FpV4LB1EiHO71QBCD0BPmVMAA5aGnsokq3wcgDODLB200vppeaaK5">
-                    </stripe-buy-button>
+                    <button class="cta-button" onclick="showEmailForm('transformation')" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; width: 100%; margin-top: 1rem;">
+                        Learn More
+                    </button>
                 </div>
                 
                 <div class="pricing-card">
@@ -593,11 +591,9 @@
                         <li>Custom SHOUT strategy for your obstacles</li>
                         <li>Flexible VIP session scheduling</li>
                     </ul>
-                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-                    <stripe-buy-button 
-                        buy-button-id="buy_btn_1RzoxjKF3KAmlaAMdLDCBLS4" 
-                        publishable-key="pk_live_51RbW5fKF3KAmlaAM1ppxLXKhdgn8bOZzpw93Hmy8nrwN7FpV4LB1EiHO71QBCD0BPmVMAA5aGnsokq3wcgDODLB200vppeaaK5">
-                    </stripe-buy-button>
+                    <button class="cta-button" onclick="showEmailForm('vip')" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; width: 100%; margin-top: 1rem;">
+                        Learn More
+                    </button>
                 </div>
                 
                 <div class="pricing-card featured">
@@ -611,11 +607,9 @@
                         <li>Set visit days and private premiere</li>
                         <li>Producer community and exclusive updates</li>
                     </ul>
-                    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-                    <stripe-buy-button 
-                        buy-button-id="buy_btn_1RzoxjKF3KAmlaAMdLDCBLS5" 
-                        publishable-key="pk_live_51RbW5fKF3KAmlaAM1ppxLXKhdgn8bOZzpw93Hmy8nrwN7FpV4LB1EiHO71QBCD0BPmVMAA5aGnsokq3wcgDODLB200vppeaaK5">
-                    </stripe-buy-button>
+                    <button class="cta-button" onclick="showEmailForm('producer')" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; width: 100%; margin-top: 1rem;">
+                        Learn More
+                    </button>
                 </div>
             </div>
         </div>
@@ -740,7 +734,7 @@
             <div style="text-align: center; margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 20px;">
                 <h3 style="margin-bottom: 15px; font-size: 1.6em;">Ready to Upgrade Your Transformation?</h3>
                 <p style="font-size: 1.1em; margin-bottom: 20px; opacity: 0.9;">Start with the free foundation, then upgrade to the full Masterclass for breakthrough results!</p>
-                <button class="cta-main" onclick="openModal()" style="background: #ffd700; color: #333;">Join the SHOUT Revolution</button>
+                <a href="#pricing" class="cta-main" style="background: #ffd700; color: #333; text-decoration: none; display: inline-block;">View Masterclass Options</a>
             </div>
         </div>
         
@@ -779,11 +773,41 @@
             <h2>Ready to Transform Your Life?</h2>
             <p>Don't let another day pass living below your potential.</p>
             <p><strong>Your breakthrough is waiting. Choose your level and let's SHOUT your way to success!</strong></p>
-            <button class="cta-main" onclick="openModal()">Join the SHOUT Revolution</button>
+            <a href="#pricing" class="cta-main" style="text-decoration: none; display: inline-block;">View Masterclass Options</a>
         </div>
     </div>
 
     <script>
+        function showEmailForm(tier = 'foundation') {
+            document.getElementById('emailModal').style.display = 'block';
+            
+            // Store the tier for later use
+            document.getElementById('emailModal').setAttribute('data-tier', tier);
+            
+            // Update modal content based on tier
+            const title = document.getElementById('emailModal').querySelector('h2');
+            const subtitle = document.getElementById('emailModal').querySelector('.form-subtitle');
+            const button = document.getElementById('emailModal').querySelector('.submit-btn');
+            
+            if (tier === 'transformation') {
+                title.textContent = 'SHOUT Transformation - $597';
+                subtitle.textContent = 'Enter your email to learn more about the SHOUT Transformation program';
+                button.textContent = 'Learn More About $597 Program';
+            } else if (tier === 'vip') {
+                title.textContent = 'SHOUT + VIP Coaching - $1,000';
+                subtitle.textContent = 'Enter your email to learn more about the VIP coaching program';
+                button.textContent = 'Learn More About $1,000 Program';
+            } else if (tier === 'producer') {
+                title.textContent = 'SHOUT + Producer Partnership - $1,500';
+                subtitle.textContent = 'Enter your email to learn more about the producer partnership program';
+                button.textContent = 'Learn More About $1,500 Program';
+            } else {
+                title.textContent = 'Get Free SHOUT Foundation Access';
+                subtitle.textContent = 'Enter your email to receive free access to the SHOUT Method foundation materials!';
+                button.textContent = 'Get Free Access';
+            }
+        }
+        
         function openModal() {
             document.getElementById('emailModal').style.display = 'block';
         }
@@ -795,25 +819,53 @@
         function handleEmailSubmit(event) {
             event.preventDefault();
             
+            const tier = document.getElementById('emailModal').getAttribute('data-tier') || 'foundation';
+            
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
+                tier: tier,
                 source: 'Masterclass'
             };
             
-            // Simulate form submission (replace with your actual form handler)
-            console.log('Email captured:', formData);
+            // Store email for future use
+            localStorage.setItem('user_email', formData.email);
+            
+            // Submit to Mailchimp (you'll need to replace with your actual Mailchimp endpoint)
+            submitToMailchimp(formData);
             
             // Hide form and show success message
             document.getElementById('emailForm').style.display = 'none';
+            
+            // Show success message
             document.querySelector('.modal-content').innerHTML = `
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2>Thank You!</h2>
                 <p style="font-size: 1.2rem; color: #4a5568; margin: 2rem 0;">
-                    You've been added to the SHOUT Masterclass waitlist. We'll be in touch soon with exclusive access details!
+                    You've been successfully added to our email list! Check your email for exclusive SHOUT Method content and masterclass details.
                 </p>
                 <button class="submit-btn" onclick="closeModal()">Close</button>
             `;
+            
+            console.log('Email captured:', formData);
+        }
+        
+        function submitToMailchimp(formData) {
+            // This is a placeholder for Mailchimp integration
+            // You'll need to replace this with your actual Mailchimp endpoint
+            const mailchimpEndpoint = 'https://your-mailchimp-endpoint.com/subscribe';
+            
+            // For now, we'll just log the data
+            console.log('Submitting to Mailchimp:', formData);
+            
+            // In production, you would send this to your Mailchimp endpoint
+            // fetch(mailchimpEndpoint, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(formData)
+            // });
         }
         
         // Close modal when clicking outside of it
