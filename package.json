@@ -1,0 +1,32 @@
+{
+  "name": "meme-kelly-shout-website",
+  "version": "1.0.0",
+  "description": "MeMe Kelly Presents: SHOUT Method - Transform obstacles into opportunities",
+  "main": "home.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx http-server . -p 3000 -o",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "shout-method",
+    "meme-kelly",
+    "personal-development",
+    "obstacle-transformation",
+    "static-website"
+  ],
+  "author": "MeMe Kelly",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/meme-kelly-shout-website.git"
+  },
+  "homepage": "https://yourdomain.com",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

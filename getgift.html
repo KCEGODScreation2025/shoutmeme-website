@@ -1,0 +1,349 @@
+​<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your FREE Chapter - SHOUT Through Anything</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .hero-content {
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+        
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .benefits {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .benefits li {
+            margin: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .lead-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .lead-form h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .lead-form .form-subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+        }
+        
+        .privacy-note {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 1rem;
+        }
+        
+        .book-preview {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .book-preview h3 {
+            color: #f1c40f;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .testimonial {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-style: italic;
+            border-left: 4px solid #f1c40f;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .lead-form {
+                padding: 2rem;
+            }
+        }
+        
+        .success-message {
+            display: none;
+            background: #27ae60;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .success-message h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .loading {
+            display: none;
+            color: #3498db;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-content">
+            <h1>SHOUT Through Anything</h1>
+            <div class="subtitle">The Complete Faith Guide for Professional Transformation</div>
+            <div class="tagline">From setback to breakthrough, from crisis to calling, from misalignment to divine purpose</div>
+            
+            <div class="book-preview">
+                <h3> Get Chapter 3 FREE: "OVERCOME Any Crisis"</h3>
+                <p><strong>Including the $2,000 DMV Miracle, the Impossible Housing Breakthrough, and How Faith Found My Missing Son</strong></p>
+                <p>Three impossible situations where faith literally moved mountains. These aren't feel-good stories - they're documented miracles that prove God's power is available for your professional breakthrough.</p>
+            </div>
+            
+            <ul class="benefits">
+                <li>The $2,000 DMV penalty that became $2.00 (bureaucratic miracle)</li>
+                <li>How a flyer blowing in the wind found my missing autistic son</li>
+                <li>The house with identical floors that God prepared in advance</li>
+                <li>The 6-step mountain-moving formula for any professional crisis</li>
+                <li>Why your biggest obstacles are actually your greatest opportunities</li>
+            </ul>
+            
+            <div class="testimonial">
+                "I thought these stories were too good to be true until I applied the mountain-moving formula to my own 'impossible' business situation. Three weeks later, funding appeared from a source I never could have imagined. God really does move mountains!" 
+                <strong>- David K., Startup Founder</strong>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 10px; margin-top: 2rem; text-align: center;">
+                <h3 style="color: #f1c40f; margin-bottom: 1rem;"> SPECIAL OFFER FOR LIMITED TIME</h3>
+                <p style="font-size: 1.2em; margin-bottom: 1rem;">Get the Complete "SHOUT Through Anything" Book</p>
+                <p style="font-size: 2em; font-weight: bold; color: #f1c40f; margin: 0;">Only $3.33!</p>
+                <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.5rem;">All 5 chapters + bonus materials</p>
+            </div>
+        </div>
+        
+        <div class="lead-form">
+            <h2>Yes! Send Me Chapter 3</h2>
+            <div class="form-subtitle">Get the $2,000 DMV miracle story + 2 more impossible breakthroughs</div>
+            
+            <form id="leadForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your best email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="profession">Current Professional Challenge (Optional)</label>
+                    <input type="text" id="profession" name="profession" placeholder="e.g., Career transition, Job loss, Business failure">
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Get My FREE Miracle Stories</span>
+                    <span class="loading">Sending...</span>
+                </button>
+                
+                <div class="privacy-note">
+                    Your information is 100% secure. No spam, ever. You can unsubscribe at any time.
+                </div>
+            </form>
+            
+            <div class="success-message" id="successMessage">
+                <h3> Success! Check Your Email</h3>
+                <p>Your FREE chapter "OVERCOME Any Crisis" with the 3 miracle stories is on its way to your inbox. Check your email (and spam folder) in the next few minutes.</p>
+                <p><strong>BONUS:</strong> You'll also receive the "Mountain-Moving Prayer Templates" and weekly miracle stories from other readers!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Show loading state
+            const btnText = document.querySelector('.btn-text');
+            const loading = document.querySelector('.loading');
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            btnText.style.display = 'none';
+            loading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                email: document.getElementById('email').value,
+                profession: document.getElementById('profession').value,
+                timestamp: new Date().toISOString(),
+                source: 'SHOUT_Lead_Magnet'
+            };
+            
+            // Simulate form submission (replace with your actual form handler)
+            setTimeout(() => {
+                // Hide form and show success message
+                document.getElementById('leadForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Track conversion (replace with your analytics)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'YOUR_CONVERSION_ID',
+                        'value': 1,
+                        'currency': 'USD'
+                    });
+                }
+                
+                // Store lead data (you'll need to implement your backend)
+                console.log('Lead captured:', formData);
+                
+                // You can integrate with:
+                // - Mailchimp API
+                // - ConvertKit API  
+                // - ActiveCampaign API
+                // - Your own backend
+                
+            }, 2000);
+        }
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate benefits on scroll
+            const benefits = document.querySelectorAll('.benefits li');
+            benefits.forEach((benefit, index) => {
+                benefit.style.opacity = '0';
+                benefit.style.transform = 'translateX(-20px)';
+                setTimeout(() => {
+                    benefit.style.transition = 'all 0.5s ease';
+                    benefit.style.opacity = '1';
+                    benefit.style.transform = 'translateX(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MeMe Kelly - Creator of the SHOUT Method</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #f39c12;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px; /* Account for fixed header */
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .story-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .story-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        
+        .story-image:hover img {
+            filter: brightness(1.2) contrast(1.1) saturate(1.1);
+            transform: scale(1.05);
+        }
+        
+        .story-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .story-content h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .story-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Credentials Section */
+        .credentials {
+            background: #f8f9fa;
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .credential-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #3498db;
+        }
+        
+        .credential-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .credential-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .credential-details {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* SHOUT Experience Images Section */
+        .shout-images-section {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .shout-images-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .shout-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 5px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Legacy Section */
+        .legacy-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .legacy-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .legacy-content h2 {
+            color: #f39c12;
+            margin-bottom: 2rem;
+        }
+        
+        .legacy-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .highlight-box {
+            background: rgba(243, 156, 18, 0.1);
+            border: 2px solid #f39c12;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #f39c12;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .shout-image {
+                margin: 1rem auto;
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">MeMe Kelly Presents: SHOUT</div>
+            <nav>
+                                 <ul class="nav-menu">
+                     <li><a href="home.html">Home</a></li>
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="method_page.html">The Method</a></li>
+                     <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
+                     <li><a href="masterclass.html">Masterclass</a></li>
+                     <li><a href="filmmoviepage.html">Film Project</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                 </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About MeMe Kelly</h1>
+        </div>
+    </section>
+
+
+
+    <!-- My Story -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">From Teacher to Playwright to Festival-Selected, Award-Winning Filmmaker</h2>
+            
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="assets/images/client.jpeg" alt="MeMe Kelly - Filmmaker & SHOUT Method Creator" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; filter: brightness(1.1) contrast(1.05); transition: all 0.3s ease;">
+                </div>
+                <div class="story-content">
+                    <h3>The Journey That Created SHOUT</h3>
+                    <p>I wasn't born knowing I'd become a filmmaker. I was just an elementary school teacher in Los Angeles with big dreams and even bigger obstacles. Every day, I watched my students face challenges that seemed insurmountable, and every night, I watched my mother battle cancer for 34 years while making history as an educator and leader.</p>
+                    
+                    <p>My mother taught me something powerful: every setback is a setup for a comeback. Every obstacle is an opportunity in work clothes. This wasn't just motivational speaking – it was survival wisdom that I watched her live every single day.</p>
+                    
+                    <p>Using what I now call the SHOUT Method, I transformed my life step by step: from elementary teacher to playwright to festival-selected, award-winning filmmaker. But more importantly, I discovered a systematic way to turn any obstacle into an opportunity – and now I teach it to women, entrepreneurs, creatives, and professionals worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic & Professional Credentials -->
+    <section class="section credentials">
+        <div class="container">
+            <h2 class="section-title">Academic Excellence & Professional Recognition</h2>
+            
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-icon"></div>
+                    <div class="credential-title">Educational Foundation</div>
+                    <div class="credential-details">
+                        Bachelor of Arts from UCLA<br>
+                        Master of Fine Arts in Playwriting<br>
+                        University of California<br>
+                        MFA Distinguished Playwriting Fellow (2015-2016)
+                    </div>
+                </div>
+                
+                <div class="credential-card">
+                    <div class="credential-icon"></div>
+                    <div class="credential-title">Screenwriting Accolades</div>
+                    <div class="credential-details">
+                        UCLA Film School Samuel Goldwyn Contest:<br>
+                        Top 10 Semifinalist (175 scripts)<br><br>
+                        Lena Waithe's Macro Lab:<br>
+                        Semifinalist Selection<br><br>
+                        Academy Nicholl Fellowship:<br>
+                        Quarter-finalist (7,600 scripts)<br><br>
+                        Humanitas Prize:<br>
+                        Script Recommendation
+                    </div>
+                </div>
+                
+                <div class="credential-card">
+                    <div class="credential-icon"></div>
+                    <div class="credential-title">Published Author & Media Contributor</div>
+                    <div class="credential-details">
+                        Multiple novels and inspirational books<br>
+                        Christian Science Monitor contributor<br>
+                        Huffington Post contributor<br>
+                        Los Angeles Times contributor<br>
+                        Substack: "The Art of Survival with MeMe Kelly"<br><br>
+                        Books available at elevatedstories.me/store
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOUT Experience Images Section -->
+    <section class="shout-images-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">The SHOUT Experience Journey</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                Scroll down to see the complete SHOUT transformation journey
+            </p>
+            
+            <!-- SHOUT Method Steps -->
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; backdrop-filter: blur(10px);">
+                <h3 style="color: #ffd700; text-align: center; margin-bottom: 1.5rem; font-size: 1.8rem;">The SHOUT Method</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="background: rgba(255, 215, 0, 0.2); padding: 1rem; border-radius: 10px; text-align: center; border: 2px solid #ffd700;">
+                        <h4 style="color: #ffd700; margin-bottom: 0.5rem;">First Step</h4>
+                        <p style="color: white; font-weight: bold; font-size: 1.2rem;">Shine</p>
+                    </div>
+                    <div style="background: rgba(255, 215, 0, 0.2); padding: 1rem; border-radius: 10px; text-align: center; border: 2px solid #ffd700;">
+                        <h4 style="color: #ffd700; margin-bottom: 0.5rem;">Second Step</h4>
+                        <p style="color: white; font-weight: bold; font-size: 1.2rem;">Have Hope</p>
+                    </div>
+                    <div style="background: rgba(255, 215, 0, 0.2); padding: 1rem; border-radius: 10px; text-align: center; border: 2px solid #ffd700;">
+                        <h4 style="color: #ffd700; margin-bottom: 0.5rem;">Third Step</h4>
+                        <p style="color: white; font-weight: bold; font-size: 1.2rem;">Overcome Obstacles</p>
+                    </div>
+                    <div style="background: rgba(255, 215, 0, 0.2); padding: 1rem; border-radius: 10px; text-align: center; border: 2px solid #ffd700;">
+                        <h4 style="color: #ffd700; margin-bottom: 0.5rem;">Fourth Step</h4>
+                        <p style="color: white; font-weight: bold; font-size: 1.2rem;">Use Your Power</p>
+                    </div>
+                    <div style="background: rgba(255, 215, 0, 0.2); padding: 1rem; border-radius: 10px; text-align: center; border: 2px solid #ffd700;">
+                        <h4 style="color: #ffd700; margin-bottom: 0.5rem;">Fifth Step</h4>
+                        <p style="color: white; font-weight: bold; font-size: 1.2rem;">Take Charge</p>
+                    </div>
+                </div>
+            </div>
+            
+                         <div class="shout-images-container">
+                 <div style="text-align: center; margin-bottom: 1rem;">
+                     <h4 style="color: #ffd700; font-size: 1.5rem; margin-bottom: 0.5rem;">First Step -- Shine</h4>
+                     <img src="assets/images/first.jpeg" alt="SHOUT Experience - First Step" class="shout-image">
+                 </div>
+                 <div style="text-align: center; margin-bottom: 1rem;">
+                     <h4 style="color: #ffd700; font-size: 1.5rem; margin-bottom: 0.5rem;">Second Step -- Have Hope</h4>
+                     <img src="assets/images/second.jpeg" alt="SHOUT Experience - Second Step" class="shout-image">
+                 </div>
+                 <div style="text-align: center; margin-bottom: 1rem;">
+                     <h4 style="color: #ffd700; font-size: 1.5rem; margin-bottom: 0.5rem;">Third Step -- Overcome Obstacles</h4>
+                     <img src="assets/images/third.jpeg" alt="SHOUT Experience - Third Step" class="shout-image">
+                 </div>
+                 <div style="text-align: center; margin-bottom: 1rem;">
+                     <h4 style="color: #ffd700; font-size: 1.5rem; margin-bottom: 0.5rem;">Fourth Step -- Use Your Power</h4>
+                     <img src="assets/images/forth.jpeg" alt="SHOUT Experience - Fourth Step" class="shout-image">
+                 </div>
+                 <div style="text-align: center; margin-bottom: 1rem;">
+                     <h4 style="color: #ffd700; font-size: 1.5rem; margin-bottom: 0.5rem;">Fifth Step -- Take Charge</h4>
+                     <img src="assets/images/fifth.jpeg" alt="SHOUT Experience - Fifth Step" class="shout-image">
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Three-Generation Legacy -->
+    <section class="section legacy-section">
+        <div class="container">
+            <div class="legacy-content">
+                <h2>A Three-Generation Legacy of Breaking Barriers</h2>
+                <p>The SHOUT Method didn't begin with me, or even with my mother. It started with my grandmother – a Black woman born in the 1920s who refused to let the limitations of her era define her possibilities.</p>
+                
+                <p>My grandmother worked her way up from humble beginnings to become a cooking instructor at a small college, breaking barriers and creating opportunities where none existed. She passed this determination to my mother, Dr. Georgia Mae, who didn't just teach me about overcoming obstacles – she was living proof that it's possible. While battling cancer for 34 years, she shattered barriers and made history not once, but twice.</p>
+                
+                <div class="highlight-box">
+                    <h3 style="color: #f39c12; margin-bottom: 1rem;">Historic Achievements</h3>
+                    <p><strong>Superintendent of a Local School District in Southern California:</strong><br>
+                    Youngest • First Woman • First Black person to hold this position</p>
+                    
+                    <p><strong>Director of Military Schools, Department of Defense:</strong><br>
+                    Atlantic and Germany Regions<br>
+                    Again: Youngest • First Woman • First Black person to achieve this role</p>
+                </div>
+                
+                <p>Every night, she would tell me: "Do not stop." Those three words became the foundation of everything I teach. When cancer tried to stop her, she didn't stop. When barriers tried to block her, she didn't stop. When people said she couldn't, she didn't stop.</p>
+                
+                <p>She taught me that obstacles aren't roadblocks – they're curriculum. They're preparing you for something greater. The SHOUT Method was born from watching her transform every challenge into a stepping stone to her next level.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;">Ready to Transform Your Obstacles Into Opportunities?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Join me in the SHOUT Masterclass and learn the complete framework that took me from elementary teacher to festival-selected filmmaker.</p>
+            <a href="masterclass.html" class="cta-button">Explore the SHOUT Masterclass</a>
+        </div>
+    </section>
+
+    <!-- Media Kit Section -->
+    <section style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1.5rem; font-size: 2rem;">Media Resources</h2>
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Access MeMe's official media kit for press inquiries, interviews, and promotional materials.</p>
+            <a href="#" id="mediaKitLink" style="background: white; color: #f39c12; padding: 1rem 2rem; border-radius: 50px; font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                📄 MeMe's Media Kit
+            </a>
+            <p style="color: white; font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">(Media Kit file will be available soon)</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
+        </div>
+    </footer>
+</body>
+</html>
