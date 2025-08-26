@@ -941,21 +941,38 @@ padding: 18px 35px;">
         }
         
         function submitToMailchimp(formData) {
-            // This is a placeholder for Mailchimp integration
-            // You'll need to replace this with your actual Mailchimp endpoint
-            const mailchimpEndpoint = 'https://your-mailchimp-endpoint.com/subscribe';
+            const MAILCHIMP_API_KEY = '9328d1805eda3bf1327f2255808232d9-us14';
+            const MAILCHIMP_AUDIENCE_ID = 'a13d8a9e0b';
+            const MAILCHIMP_DC = 'us1';
             
-            // For now, we'll just log the data
-            console.log('Submitting to Mailchimp:', formData);
+            const url = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`;
             
-            // In production, you would send this to your Mailchimp endpoint
-            // fetch(mailchimpEndpoint, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(formData)
-            // });
+            const data = {
+                email_address: formData.email,
+                status: 'subscribed',
+                merge_fields: {
+                    FNAME: formData.firstName || '',
+                    CHALLENGE: formData.challenge || '',
+                    PRODUCT: formData.productType || '',
+                    SOURCE: formData.source || 'Urgent Kit'
+                }
+            };
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `apikey ${MAILCHIMP_API_KEY}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         }
         // Close modals when clicking outside
         window.onclick = function(event) {
