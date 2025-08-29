@@ -11,50 +11,17 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/",
-      "destination": "/home.html"
-    },
-    {
-      "source": "/home",
-      "destination": "/home.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html"
-    },
-    {
-      "source": "/method",
-      "destination": "/method_page.html"
-    },
-    {
-      "source": "/urgent-kit",
-      "destination": "/urgent_shout_kit.html"
-    },
-    {
-      "source": "/masterclass",
-      "destination": "/masterclass.html"
-    },
-    {
-      "source": "/film",
-      "destination": "/filmmoviepage.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html"
-    },
-    {
-      "source": "/ebook",
-      "destination": "/ebook.html"
-    },
-    {
-      "source": "/getgift",
-      "destination": "/getgift.html"
-    },
-    {
-      "source": "/chp3",
-      "destination": "/chp3.html"
-    }
+    { "source": "/", "destination": "/home.html" },
+    { "source": "/home", "destination": "/home.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/method", "destination": "/method_page.html" },
+    { "source": "/urgent-kit", "destination": "/urgent_shout_kit.html" },
+    { "source": "/masterclass", "destination": "/masterclass.html" },
+    { "source": "/film", "destination": "/filmmoviepage.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/ebook", "destination": "/ebook.html" },
+    { "source": "/getgift", "destination": "/getgift.html" },
+    { "source": "/chp3", "destination": "/chp3.html" }
   ],
   "headers": [
     {
@@ -71,28 +38,6 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/documents/(.*).pdf",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/pdf"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "inline"
         }
       ]
     },
