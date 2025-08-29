@@ -1,392 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MeMe Kelly - SHOUT Method | Transform Obstacles Into Opportunities</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-        
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f39c12;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #f39c12;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8rem 0 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f39c12);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero .tagline {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .cta-button {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-        
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            border-top: 5px solid #3498db;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-details {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* Story Section */
-        .story-section {
-            background: #f8f9fa;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f39c12;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      .nav-menu a:hover {
+        color: #f39c12;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8rem 0 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fff, #f39c12);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero .tagline {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        padding: 1.2rem 2.5rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #2c3e50;
+      }
+
+      /* Features Grid */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-top: 5px solid #3498db;
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #3498db, #2980b9);
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .feature-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+
+      .feature-details {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Story Section */
+      .story-section {
+        background: #f8f9fa;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        align-items: center;
+        margin-top: 3rem;
+      }
+
+      .story-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .story-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .story-content h3 {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        color: white;
+        text-align: center;
+        padding: 4rem 0;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
+          text-align: center;
         }
-        
-        .story-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+        .hero h1 {
+          font-size: 2.5rem;
         }
-        
-        .story-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
+
+        .nav-menu {
+          display: none;
         }
-        
-        .story-content h3 {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .story-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="nav-container">
-            <div class="logo">MeMe Kelly Presents: SHOUT</div>
-            <nav>
-                                 <ul class="nav-menu">
-                     <li><a href="home.html">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="method_page.html">The Method</a></li>
-                     <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
-                     <li><a href="masterclass.html">Masterclass</a></li>
-                     <li><a href="filmmoviepage.html">Film Project</a></li>
-                     <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
-        </div>
+      <div class="nav-container">
+        <div class="logo">MeMe Kelly Presents: SHOUT</div>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="method_page.html">The Method</a></li>
+            <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
+            <li><a href="masterclass.html">Masterclass</a></li>
+            <li><a href="filmmoviepage.html">Film Project</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Transform Obstacles Into Opportunities</h1>
-            <div class="tagline">Discover the SHOUT Method - A proven framework for turning setbacks into stepping stones</div>
-            <a href="method_page.html" class="cta-button">Learn the SHOUT Method</a>
-        </div>
+      <div class="hero-content">
+        <h1>Transform Obstacles Into Opportunities test from local</h1>
+        <div class="tagline">Discover the SHOUT Method - A proven framework for turning setbacks into stepping stones</div>
+        <a href="method_page.html" class="cta-button">Learn the SHOUT Method</a>
+      </div>
     </section>
 
     <!-- What is SHOUT -->
     <section class="section">
-        <div class="container">
-            <h2 class="section-title">What is the SHOUT Method?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <div class="feature-title">Systematic Approach</div>
-                    <div class="feature-details">
-                        A proven framework that transforms any obstacle into an opportunity through structured, actionable steps.
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💪</div>
-                    <div class="feature-title">Proven Results</div>
-                    <div class="feature-details">
-                        From elementary teacher to playwright to festival-selected, award-winning filmmaker - this method works.
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🌟</div>
-                    <div class="feature-title">Legacy Framework</div>
-                    <div class="feature-details">
-                        Born from three generations of barrier-breaking women who refused to let limitations define possibilities.
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">What is the SHOUT Method?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-title">Systematic Approach</div>
+            <div class="feature-details">A proven framework that transforms any obstacle into an opportunity through structured, actionable steps.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💪</div>
+            <div class="feature-title">Proven Results</div>
+            <div class="feature-details">From elementary teacher to playwright to festival-selected, award-winning filmmaker - this method works.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌟</div>
+            <div class="feature-title">Legacy Framework</div>
+            <div class="feature-details">Born from three generations of barrier-breaking women who refused to let limitations define possibilities.</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Story Section -->
     <section class="section story-section">
-        <div class="container">
-            <h2 class="section-title">From Teacher to Filmmaker</h2>
-            
-            <div class="story-grid">
-                <div class="story-image">
-                    <div>
-                        MeMe Kelly<br>
-                        <small>Creator of the SHOUT Method</small>
-                    </div>
-                </div>
-                <div class="story-content">
-                    <h3>The Journey That Created SHOUT</h3>
-                    <p>I wasn't born knowing I'd become a filmmaker. I was just an elementary school teacher in Los Angeles with big dreams and even bigger obstacles. Every day, I watched my students face challenges that seemed insurmountable, and every night, I watched my mother battle cancer for 34 years while making history as an educator and leader.</p>
-                    
-                    <p>My mother taught me something powerful: every setback is a setup for a comeback. Every obstacle is an opportunity in work clothes. This wasn't just motivational speaking – it was survival wisdom that I watched her live every single day.</p>
-                    
-                    <p>Using what I now call the SHOUT Method, I transformed my life step by step: from elementary teacher to playwright to festival-selected, award-winning filmmaker. But more importantly, I discovered a systematic way to turn any obstacle into an opportunity – and now I teach it to women, entrepreneurs, creatives, and professionals worldwide.</p>
-                    
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="assets/documents/A STORYWHYMEMESHOUTS.pdf" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);">
-                            📖 MeMe's Note: Why She SHOUTS
-                        </a>
-                    </div>
+      <div class="container">
+        <h2 class="section-title">From Teacher to Filmmaker</h2>
 
-                </div>
+        <div class="story-grid">
+          <div class="story-image">
+            <div>
+              MeMe Kelly<br />
+              <small>Creator of the SHOUT Method</small>
             </div>
+          </div>
+          <div class="story-content">
+            <h3>The Journey That Created SHOUT</h3>
+            <p>I wasn't born knowing I'd become a filmmaker. I was just an elementary school teacher in Los Angeles with big dreams and even bigger obstacles. Every day, I watched my students face challenges that seemed insurmountable, and every night, I watched my mother battle cancer for 34 years while making history as an educator and leader.</p>
+
+            <p>My mother taught me something powerful: every setback is a setup for a comeback. Every obstacle is an opportunity in work clothes. This wasn't just motivational speaking – it was survival wisdom that I watched her live every single day.</p>
+
+            <p>Using what I now call the SHOUT Method, I transformed my life step by step: from elementary teacher to playwright to festival-selected, award-winning filmmaker. But more importantly, I discovered a systematic way to turn any obstacle into an opportunity – and now I teach it to women, entrepreneurs, creatives, and professionals worldwide.</p>
+
+            <div style="text-align: center; margin-top: 2rem">
+              <a href="assets/documents/A STORYWHYMEMESHOUTS.pdf" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3)"> 📖 MeMe's Note: Why She SHOUTS </a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Call to Action -->
     <section class="cta-section">
-        <div class="container">
-            <h2 style="margin-bottom: 1rem;">Ready to Transform Your Obstacles Into Opportunities?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Join me in the SHOUT Masterclass and learn the complete framework that took me from elementary teacher to festival-selected filmmaker.</p>
-            <a href="masterclass.html" class="cta-button">Explore the SHOUT Masterclass</a>
-        </div>
+      <div class="container">
+        <h2 style="margin-bottom: 1rem">Ready to Transform Your Obstacles Into Opportunities?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9">Join me in the SHOUT Masterclass and learn the complete framework that took me from elementary teacher to festival-selected filmmaker.</p>
+        <a href="masterclass.html" class="cta-button">Explore the SHOUT Masterclass</a>
+      </div>
     </section>
 
     <!-- Movie Section -->
-    <section class="section" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
-        <div class="container">
-            <h2 class="section-title" style="color: #27ae60;">🎬 ONE NIGHT IN LA - Now Available!</h2>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #2c3e50;">
-                    MeMe Kelly's festival selected, based on an award winning script film is now streaming on Tubi TV. A beautiful family movie about a biracial Mom — her Mom is white. My grandkids are bi-racial so this is a legacy movie for me.
-                </p>
-                
-                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; margin: 2rem 0;">
-                    <a href="https://tubitv.com/movies/100031010/one-night-in-la" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
-                        🎬 Watch on Tubi TV
-                    </a>
-                    
-                    <a href="https://www.onenightinlamovie.com" target="_blank" style="background: #3498db; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
-                        🌐 Official Website
-                    </a>
-                    
-                    <a href="https://youtu.be/Me9iN2l1rCs" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
-                        🎥 Watch Teaser Trailer
-                    </a>
-                </div>
-                
-                <p style="font-size: 0.9rem; color: #e74c3c; margin-top: 1rem; font-weight: bold;">
-                    <strong>Contact:</strong> MeMe Kelly at meme@shoutmethod.com or memekellyinspires@gmail.com | <strong>Website:</strong> www.onenightinlamovie.com | <strong>Teaser:</strong> https://youtu.be/Me9iN2l1rCs
-                </p>
-            </div>
+    <section class="section" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9)">
+      <div class="container">
+        <h2 class="section-title" style="color: #27ae60">🎬 ONE NIGHT IN LA - Now Available!</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto">
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #2c3e50">MeMe Kelly's festival selected, based on an award winning script film is now streaming on Tubi TV. A beautiful family movie about a biracial Mom — her Mom is white. My grandkids are bi-racial so this is a legacy movie for me.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; margin: 2rem 0">
+            <a href="https://tubitv.com/movies/100031010/one-night-in-la" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease"> 🎬 Watch on Tubi TV </a>
+
+            <a href="https://www.onenightinlamovie.com" target="_blank" style="background: #3498db; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease"> 🌐 Official Website </a>
+
+            <a href="https://youtu.be/Me9iN2l1rCs" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease"> 🎥 Watch Teaser Trailer </a>
+          </div>
+
+          <p style="font-size: 0.9rem; color: #e74c3c; margin-top: 1rem; font-weight: bold"><strong>Contact:</strong> MeMe Kelly at meme@shoutmethod.com or memekellyinspires@gmail.com | <strong>Website:</strong> www.onenightinlamovie.com | <strong>Teaser:</strong> https://youtu.be/Me9iN2l1rCs</p>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
