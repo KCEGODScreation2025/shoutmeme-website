@@ -95,6 +95,19 @@
           "value": "inline"
         }
       ]
+    },
+    {
+      "headers": [
+        {
+          "source": "/popup.js",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/javascript"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
