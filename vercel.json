@@ -8,10 +8,6 @@
     {
       "src": "assets/**/*",
       "use": "@vercel/static"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/node"
     }
   ],
   "rewrites": [
