@@ -42,7 +42,7 @@
       ]
     },
     {
-      "source": "./popup.js",
+      "source": "https://github.com/KCEGODScreation2025/shoutmeme-website/popup.js",
       "headers": [
         {
           "key": "Content-Type",
