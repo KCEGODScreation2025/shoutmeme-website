@@ -1,17 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "assets/**/*",
-      "use": "@vercel/static"
-    }
-  ],
+  "builds": [{ "src": "**", "use": "@vercel/static" }],
   "rewrites": [
-    { "source": "/popup", "destination": "/popup.js" },
     { "source": "/", "destination": "/home.html" },
     { "source": "/home", "destination": "/home.html" },
     { "source": "/about", "destination": "/about.html" },
@@ -23,33 +13,5 @@
     { "source": "/ebook", "destination": "/ebook.html" },
     { "source": "/getgift", "destination": "/getgift.html" },
     { "source": "/chp3", "destination": "/chp3.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    },
-    {
-      "source": "/popup.js",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        }
-      ]
-    }
   ]
 }
