@@ -25,8 +25,7 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/ebook", "destination": "/ebook.html" },
     { "source": "/getgift", "destination": "/getgift.html" },
-    { "source": "/chp3", "destination": "/chp3.html" },
-    { "source": "/popup", "destination": "/popup.js" }
+    { "source": "/chp3", "destination": "/chp3.html" }
   ],
   "headers": [
     {
