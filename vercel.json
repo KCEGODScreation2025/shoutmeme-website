@@ -29,15 +29,6 @@
   ],
   "headers": [
     {
-      "source": "/popup.js",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        }
-      ]
-    },
-    {
       "source": "/(.*)",
       "headers": [
         {
