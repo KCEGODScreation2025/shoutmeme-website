@@ -26,20 +26,5 @@
     { "source": "/ebook", "destination": "/ebook.html" },
     { "source": "/getgift", "destination": "/getgift.html" },
     { "source": "/chp3", "destination": "/chp3.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    }
   ]
 }
