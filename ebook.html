@@ -5,194 +5,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHOUT Through Anything</title>
     <style>
-        @page {
-            margin: 1in;
-            size: 8.5in 11in;
-        }
-        
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .page-break {
-            page-break-before: always;
-        }
-        
-        .title-page {
-            text-align: center;
-            padding-top: 3in;
-        }
-        
-        .title-page h1 {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 0.5em;
-            color: #2c3e50;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .title-page h2 {
-            font-size: 1.5em;
-            margin-bottom: 2em;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-        
-        .title-page .author {
-            font-size: 1.3em;
-            margin-top: 2em;
-            color: #34495e;
-        }
-        
-        .copyright-page {
-            padding-top: 2in;
-            font-size: 0.9em;
-            line-height: 1.8;
-        }
-        
-        .copyright-page h3 {
-            text-align: center;
-            margin-bottom: 2em;
-            font-size: 1.2em;
-        }
-        
-        .toc {
-            padding-top: 1in;
-        }
-        
-        .toc h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 2em;
-            color: #2c3e50;
-        }
-        
-                .toc-entry {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1em;
-            padding-bottom: 0.5em;
-            border-bottom: 1px dotted #bdc3c7;
-            align-items: center;
-        }
-        
-        .toc-entry .title {
-            font-weight: bold;
-        }
-        
-        .toc-entry .page {
-            font-weight: bold;
-            color: #3498db;
-        }
-        
-        .chapter {
-            padding-top: 0.5in;
-        }
-        
-        .chapter h1 {
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 0.5em;
-            color: #2c3e50;
-            page-break-before: always;
-        }
-        
-        .chapter h2 {
-            font-size: 1.8em;
-            margin-top: 2em;
-            margin-bottom: 1em;
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 0.5em;
-        }
-        
-        .chapter h3 {
-            font-size: 1.3em;
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            color: #2c3e50;
-        }
-        
-        .chapter-subtitle {
-            text-align: center;
-            font-style: italic;
-            font-size: 1.2em;
-            margin-bottom: 2em;
-            color: #7f8c8d;
-        }
-        
-        .scripture {
-            background-color: #ecf0f1;
-            padding: 1.5em;
-            margin: 2em 0;
-            border-left: 5px solid #3498db;
-            font-style: italic;
-            font-size: 1.1em;
-            text-align: center;
-        }
-        
-        .scripture-ref {
-            font-weight: bold;
-            margin-top: 1em;
-            display: block;
-        }
-        
-        ul, ol {
-            margin: 1em 0;
-            padding-left: 2em;
-        }
-        
-        li {
-            margin-bottom: 0.5em;
-        }
-        
-        .divider {
-            text-align: center;
-            margin: 2em 0;
-            font-size: 1.5em;
-            color: #bdc3c7;
-        }
-        
-        .emphasis {
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        
-        .sidebar {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            padding: 1.5em;
-            margin: 2em 0;
-            border-radius: 5px;
-        }
-        
-        .sidebar h4 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        
-        .page-number {
-            position: fixed;
-            bottom: 0.5in;
-            right: 0.5in;
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
-        
-        @media print {
-            .page-number {
-                position: static;
-                text-align: center;
-                margin-top: 2em;
-            }
-        }
-    </style>
+  @page {
+    margin: 1in;
+    size: 8.5in 11in;
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .title-page {
+    text-align: center;
+    padding-top: 3in;
+  }
+
+  .title-page h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .title-page h2 {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+
+  .title-page .author {
+    font-size: 1.3em;
+    margin-top: 2em;
+    color: #34495e;
+  }
+
+  .copyright-page {
+    padding-top: 2in;
+    font-size: 0.9em;
+    line-height: 1.8;
+  }
+
+  .copyright-page h3 {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+
+  .toc {
+    padding-top: 1in;
+  }
+
+  .toc h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2em;
+    color: #2c3e50;
+  }
+
+  .toc-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px dotted #bdc3c7;
+  }
+
+  .toc-entry .title {
+    font-weight: bold;
+  }
+
+  .toc-entry .page {
+    font-weight: bold;
+    color: #3498db;
+  }
+
+  .chapter {
+    padding-top: 0.5in;
+  }
+
+  .chapter h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    page-break-before: always;
+  }
+
+  .chapter h2 {
+    font-size: 1.8em;
+    margin: 2em 0 1em;
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5em;
+  }
+
+  .chapter h3 {
+    font-size: 1.3em;
+    margin: 1.5em 0 0.8em;
+    color: #2c3e50;
+  }
+
+  .chapter-subtitle {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: #7f8c8d;
+  }
+
+  .scripture {
+    background-color: #ecf0f1;
+    padding: 1.5em;
+    margin: 2em 0;
+    border-left: 5px solid #3498db;
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  .scripture-ref {
+    font-weight: bold;
+    margin-top: 1em;
+    display: block;
+  }
+
+  ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  .divider {
+    text-align: center;
+    margin: 2em 0;
+    font-size: 1.5em;
+    color: #bdc3c7;
+  }
+
+  .emphasis {
+    font-weight: bold;
+    color: #e74c3c;
+  }
+
+  .sidebar {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 1.5em;
+    margin: 2em 0;
+    border-radius: 5px;
+  }
+
+  .sidebar h4 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+
+  .page-number {
+    position: fixed;
+    bottom: 0.5in;
+    right: 0.5in;
+    font-size: 0.9em;
+    color: #7f8c8d;
+  }
+
+  @media print {
+    .page-number {
+      position: static;
+      text-align: center;
+      margin-top: 2em;
+    }
+  }
+</style>
+
 </head>
 <body>
 
