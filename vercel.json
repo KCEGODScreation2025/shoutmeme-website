@@ -11,6 +11,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/popup", "destination": "/popup.js" },
     { "source": "/", "destination": "/home.html" },
     { "source": "/home", "destination": "/home.html" },
     { "source": "/about", "destination": "/about.html" },
@@ -21,8 +22,7 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/ebook", "destination": "/ebook.html" },
     { "source": "/getgift", "destination": "/getgift.html" },
-    { "source": "/chp3", "destination": "/chp3.html" },
-    { "source": "/popup", "destination": "/popup.js" }
+    { "source": "/chp3", "destination": "/chp3.html" }
   ],
   "headers": [
     {
