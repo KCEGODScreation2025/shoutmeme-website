@@ -42,7 +42,7 @@
       ]
     },
     {
-      "source": "/popup.js",
+      "source": "./popup.js",
       "headers": [
         {
           "key": "Content-Type",
