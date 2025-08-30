@@ -1,693 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Every Night in LA - A Film by MeMe Kelly</title>
     <style>
-        /* Header Styles */
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f39c12;
-        }
-        
+      /* Header Styles */
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f39c12;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      .nav-menu a:hover {
+        color: #f39c12;
+      }
+
+      /* Adjust hero section to account for fixed header */
+      .hero-section {
+        margin-top: 80px;
+      }
+
+      @media (max-width: 768px) {
         .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+          display: none;
         }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #f39c12;
-        }
-        
-        /* Adjust hero section to account for fixed header */
-        .hero-section {
-            margin-top: 80px;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-        }
+      }
     </style>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #333;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('assets/images/movie_poster.JPG') no-repeat center center;
-            background-size: cover;
-            z-index: -1;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 2;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: #333;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("assets/images/movie_poster.JPG") no-repeat center center;
+        background-size: cover;
+        z-index: -1;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        padding: 2rem;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        color: #f39c12;
+      }
+
+      .hero-content .tagline {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-style: italic;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      .shout-banner {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        display: inline-block;
+        margin: 1rem 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+        background: white;
+        margin: 2rem 0;
+      }
+
+      .section:nth-child(even) {
+        background: #f8f9fa;
+      }
+
+      .section h2 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .section h3 {
+        font-size: 1.8rem;
+        color: #34495e;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .director-message {
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        color: white;
+        padding: 3rem;
+        border-radius: 15px;
+        margin: 3rem 0;
+        text-align: center;
+      }
+
+      .director-message h3 {
+        color: #f1c40f;
+        margin-bottom: 1.5rem;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .team-member {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid #3498db;
+      }
+
+      .team-member img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      .team-member h4 {
+        color: #2c3e50;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .team-member .role {
+        color: #e74c3c;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .inclusion-section {
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+        color: white;
+        padding: 4rem 0;
+      }
+
+      .inclusion-section h2 {
+        color: white;
+      }
+
+      .autism-highlight {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        border-left: 5px solid #f1c40f;
+      }
+
+      .investment-section {
+        background: linear-gradient(135deg, #8e44ad, #9b59b6);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .investment-section h2 {
+        color: white;
+        margin-bottom: 2rem;
+      }
+
+      .investment-tiers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .tier {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .tier:hover {
+        transform: translateY(-5px);
+        border-color: #f1c40f;
+      }
+
+      .tier h4 {
+        color: #f1c40f;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tier .price {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin: 1rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+      }
+
+      .legacy-section {
+        background: #2c3e50;
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .legacy-section h2 {
+        color: #f1c40f;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+      }
+
+      .stat {
+        padding: 1.5rem;
+      }
+
+      .stat .number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #f39c12;
+        display: block;
+      }
+
+      .contact-section {
+        background: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
         .hero-content h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-            color: #f39c12;
+          font-size: 2.5rem;
         }
-        
-        .hero-content .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-style: italic;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-        
-        .shout-banner {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin: 1rem 0;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
+
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+          padding: 0 1rem;
         }
-        
-        .section {
-            padding: 4rem 0;
-            background: white;
-            margin: 2rem 0;
-        }
-        
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .section h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .section h3 {
-            font-size: 1.8rem;
-            color: #34495e;
-            margin: 2rem 0 1rem 0;
-        }
-        
-        .director-message {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        
-        .director-message h3 {
-            color: #f1c40f;
-            margin-bottom: 1.5rem;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .team-member {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #3498db;
-        }
-        
-        .team-member img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-        
-        .team-member h4 {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-member .role {
-            color: #e74c3c;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .inclusion-section {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 4rem 0;
-        }
-        
-        .inclusion-section h2 {
-            color: white;
-        }
-        
-        .autism-highlight {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border-left: 5px solid #f1c40f;
-        }
-        
-        .investment-section {
-            background: linear-gradient(135deg, #8e44ad, #9b59b6);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .investment-section h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-        
+
+        .team-grid,
         .investment-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+          grid-template-columns: 1fr;
         }
-        
-        .tier {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: transform 0.3s ease;
+
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background-color: #222;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 200px;
+          padding: 1rem;
         }
-        
-        .tier:hover {
-            transform: translateY(-5px);
-            border-color: #f1c40f;
+
+        .nav-menu.active {
+          display: flex;
         }
-        
-        .tier h4 {
-            color: #f1c40f;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+
+        /* Hamburger icon */
+        .hamburger {
+          display: block;
+          font-size: 2rem;
+          cursor: pointer;
         }
-        
-        .tier .price {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-button {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin: 1rem;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
-        }
-        
-        .legacy-section {
-            background: #2c3e50;
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .legacy-section h2 {
-            color: #f1c40f;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        
-        .stat {
-            padding: 1.5rem;
-        }
-        
-        .stat .number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #f39c12;
-            display: block;
-        }
-        
-        .contact-section {
-            background: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .team-grid,
-            .investment-tiers {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="nav-container">
-            <div class="logo">MeMe Kelly Presents: SHOUT</div>
-            <nav>
-                                 <ul class="nav-menu">
-                     <li><a href="home.html">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="method_page.html">The Method</a></li>
-                     <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
-                     <li><a href="masterclass.html">Masterclass</a></li>
-                     <li><a href="filmmoviepage.html">Film Project</a></li>
-                     <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
-        </div>
+      <div class="nav-container">
+        <div class="logo">MeMe Kelly Presents: SHOUT</div>
+        <nav class="navbar">
+          <ul class="nav-menu" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="method_page.html">The Method</a></li>
+            <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
+            <li><a href="masterclass.html">Masterclass</a></li>
+            <li><a href="filmmoviepage.html">Film Project</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">☰</div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <div class="hero-section">
-        <div class="hero-content">
-            <h1>Every Night in LA</h1>
-            <div class="tagline">A Film Born from the SHOUT Revolution</div>
-            <div class="shout-banner">From Crisis to Calling - A Legacy Film</div>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0; border-left: 5px solid #f1c40f;">
-                <h3 style="color: #f1c40f; margin-bottom: 1rem; font-size: 1.2rem;">LOGLINE</h3>
-                <p style="font-size: 1.2rem; font-style: italic; line-height: 1.6;">
-                                         A mom and professor refuses to allow cancer, chaos, a controlling husband, and children in crisis 
-                     keep her from her divine calling.
-                </p>
-            </div>
-            
-            <p style="font-size: 1.2rem; margin-top: 2rem;">
-                A heartfelt family film about love, identity, and finding your place in the world.
-                <br><strong>Streaming on Tubi: "One Night in LA" - The Prequel</strong>
-            </p>
+      <div class="hero-content">
+        <h1>Every Night in LA</h1>
+        <div class="tagline">A Film Born from the SHOUT Revolution</div>
+        <div class="shout-banner">From Crisis to Calling - A Legacy Film</div>
+
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0; border-left: 5px solid #f1c40f">
+          <h3 style="color: #f1c40f; margin-bottom: 1rem; font-size: 1.2rem">LOGLINE</h3>
+          <p style="font-size: 1.2rem; font-style: italic; line-height: 1.6">A mom and professor refuses to allow cancer, chaos, a controlling husband, and children in crisis keep her from her divine calling.</p>
         </div>
+
+        <p style="font-size: 1.2rem; margin-top: 2rem">
+          A heartfelt family film about love, identity, and finding your place in the world.
+          <br /><strong>Streaming on Tubi: "One Night in LA" - The Prequel</strong>
+        </p>
+      </div>
     </div>
 
     <!-- Director's Vision Section -->
     <div class="section">
-        <div class="container">
-            <div class="director-message">
-                <h3>Director's Vision: Before and After the SHOUT Revolution</h3>
-                <p style="font-size: 1.2rem; line-height: 1.8;">
-                    As a mom of three boys—all delivered naturally—I know when it's time to push something out into the world. 
-                    And that time is now—for Every Night In LA.
-                </p>
-                <p style="margin-top: 1.5rem;">
-                    <strong>Before my SHOUT revolution</strong>, I created "One Night in LA" (now streaming on Tubi). 
-                    <strong>Every Night in LA</strong> represents my creative breakthrough using the SHOUT framework—
-                    born from faith, funded by purpose, and destined to inspire families everywhere.
-                </p>
-                
-                <!-- Video Section -->
-                <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 10px;">
-                    <h4 style="color: #f1c40f; margin-bottom: 1rem;">📹 Watch MeMe's Journey</h4>
-                    <p style="margin-bottom: 1rem;">See behind-the-scenes footage from "One Night in LA" and hear about the vision for "Every Night in LA"</p>
-                    <!-- Vimeo Video Embed -->
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
-                        <iframe src="https://player.vimeo.com/video/1069077380?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                                allow="autoplay; fullscreen; picture-in-picture" 
-                                title="Every Night in LA - Behind the Scenes">
-                        </iframe>
-                    </div>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; font-style: italic; color: rgba(255,255,255,0.8);">
-                        Current video shows clips from "One Night in LA" - filmed before the SHOUT revolution! 
-                        See how far we've come on this incredible journey.
-                    </p>
-                </div>
+      <div class="container">
+        <div class="director-message">
+          <h3>Director's Vision: Before and After the SHOUT Revolution</h3>
+          <p style="font-size: 1.2rem; line-height: 1.8">As a mom of three boys—all delivered naturally—I know when it's time to push something out into the world. And that time is now—for Every Night In LA.</p>
+          <p style="margin-top: 1.5rem"><strong>Before my SHOUT revolution</strong>, I created "One Night in LA" (now streaming on Tubi). <strong>Every Night in LA</strong> represents my creative breakthrough using the SHOUT framework— born from faith, funded by purpose, and destined to inspire families everywhere.</p>
+
+          <!-- Video Section -->
+          <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+            <h4 style="color: #f1c40f; margin-bottom: 1rem">📹 Watch MeMe's Journey</h4>
+            <p style="margin-bottom: 1rem">See behind-the-scenes footage from "One Night in LA" and hear about the vision for "Every Night in LA"</p>
+            <!-- Vimeo Video Embed -->
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px">
+              <iframe src="https://player.vimeo.com/video/1069077380?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none" allow="autoplay; fullscreen; picture-in-picture" title="Every Night in LA - Behind the Scenes"> </iframe>
             </div>
-            
-            <h2>A Film Filled with Light, Joy, and Good Energy</h2>
-            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto;">
-                No more waiting, no more second-guessing. It's time to cross the finish line.
-                I've had a few false starts this year, mostly because I've been feeling the weight of everything going on in our country. 
-                But that's exactly why ONE NIGHT IN LA needs to be born. A movie about a woman who SHOUTS!
-            </p>
-            
-            <div style="background: #e8f5e9; padding: 2rem; border-radius: 10px; margin: 3rem 0; text-align: center; border-left: 5px solid #27ae60;">
-                <h3 style="color: #27ae60; margin-bottom: 1rem;">🎬 ONE NIGHT IN LA IS NOW AVAILABLE!</h3>
-                <p style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">Watch the Movie Now</p>
-                <p style="margin-top: 1rem; color: #34495e;">
-                    ONE NIGHT IN LA is now available to watch! 
-                    Join us in celebrating this mountain-moving moment.
-                </p>
-                <p style="font-style: italic; margin-top: 1rem; color: #27ae60;">
-                    ✨ Associate Producer opportunities available NOW ✨
-                </p>
-                
-                <!-- Movie Links and Contact Information -->
-                <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; text-align: center;">
-                    <h4 style="color: #2c3e50; margin-bottom: 1rem;">MeMe Kelly - Writer, Director & Producer</h4>
-                    <p style="margin-bottom: 1rem; font-weight: bold;">Please Watch & Share ONE NIGHT IN LA MOVIE</p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                        <a href="https://tubitv.com/movies/100031010/one-night-in-la" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
-                            🎬 Watch on Tubi TV
-                        </a>
-                        
-                        <a href="http://www.onenightinlamovie.com" target="_blank" style="background: #3498db; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
-                            🌐 Official Website
-                        </a>
-                        
-                        <a href="https://youtu.be/Me9iN2l1rCs" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
-                            🎥 Watch Teaser Trailer
-                        </a>
-                    </div>
-                    
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
-                        <strong>Contact:</strong> MeMe Kelly<br>
-                        <strong>Website:</strong> www.onenightinlamovie.com<br>
-                        <strong>Teaser:</strong> https://youtu.be/Me9iN2l1rCs
-                    </p>
-                    
-                    <!-- Movie Posters -->
-                    <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                        <div style="text-align: center;">
-                            <img src="assets/images/poster1.jpg" alt="ONE NIGHT IN LA Movie Poster 1" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                        </div>
-                        <div style="text-align: center;">
-                            <img src="assets/images/poster2.jpg" alt="ONE NIGHT IN LA Movie Poster 2" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p style="font-size: 0.9rem; margin-top: 1rem; font-style: italic; color: rgba(255, 255, 255, 0.8)">Current video shows clips from "One Night in LA" - filmed before the SHOUT revolution! See how far we've come on this incredible journey.</p>
+          </div>
         </div>
+
+        <h2>A Film Filled with Light, Joy, and Good Energy</h2>
+        <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto">No more waiting, no more second-guessing. It's time to cross the finish line. I've had a few false starts this year, mostly because I've been feeling the weight of everything going on in our country. But that's exactly why ONE NIGHT IN LA needs to be born. A movie about a woman who SHOUTS!</p>
+
+        <div style="background: #e8f5e9; padding: 2rem; border-radius: 10px; margin: 3rem 0; text-align: center; border-left: 5px solid #27ae60">
+          <h3 style="color: #27ae60; margin-bottom: 1rem">🎬 ONE NIGHT IN LA IS NOW AVAILABLE!</h3>
+          <p style="font-size: 1.2rem; font-weight: bold; color: #2c3e50">Watch the Movie Now</p>
+          <p style="margin-top: 1rem; color: #34495e">ONE NIGHT IN LA is now available to watch! Join us in celebrating this mountain-moving moment.</p>
+          <p style="font-style: italic; margin-top: 1rem; color: #27ae60">✨ Associate Producer opportunities available NOW ✨</p>
+
+          <!-- Movie Links and Contact Information -->
+          <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; text-align: center">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem">MeMe Kelly - Writer, Director & Producer</h4>
+            <p style="margin-bottom: 1rem; font-weight: bold">Please Watch & Share ONE NIGHT IN LA MOVIE</p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center">
+              <a href="https://tubitv.com/movies/100031010/one-night-in-la" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease"> 🎬 Watch on Tubi TV </a>
+
+              <a href="http://www.onenightinlamovie.com" target="_blank" style="background: #3498db; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease"> 🌐 Official Website </a>
+
+              <a href="https://youtu.be/Me9iN2l1rCs" target="_blank" style="background: #e74c3c; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease"> 🎥 Watch Teaser Trailer </a>
+            </div>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666">
+              <strong>Contact:</strong> MeMe Kelly<br />
+              <strong>Website:</strong> www.onenightinlamovie.com<br />
+              <strong>Teaser:</strong> https://youtu.be/Me9iN2l1rCs
+            </p>
+
+            <!-- Movie Posters -->
+            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap">
+              <div style="text-align: center">
+                <img src="assets/images/poster1.jpg" alt="ONE NIGHT IN LA Movie Poster 1" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3)" />
+              </div>
+              <div style="text-align: center">
+                <img src="assets/images/poster2.jpg" alt="ONE NIGHT IN LA Movie Poster 2" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Team Section -->
     <div class="section">
-        <div class="container">
-            <h2>Meet the Professional Team</h2>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="assets/images/Ashley.jpg" alt="Ashley LaRae - Producer & CEO of LR Entertainment">
-                    <h4>Ashley LaRae</h4>
-                    <div class="role">Producer & CEO of LR Entertainment</div>
-                    <p>A seasoned producer bringing over 12 years of filmmaking experience to the industry. She has produced the award-winning short film Finding Home and developed two pilots. Ashley has contributed to major studio productions such as Fatale, Persecuted, and SWAT.</p>
-                </div>
-                
-                <div class="team-member">
-                    <img src="assets/images/rich.jpeg" alt="Rich Bella - Cinematographer & Creative Executive">
-                    <h4>Rich Bella</h4>
-                    <div class="role">Cinematographer & Creative Executive</div>
-                    <p>A Filipino-American Creative Executive and Cinematographer with 15 years of experience. His portfolio boasts over 15 short films, 5 feature-length productions, and commercial work for international brands. A best-selling author, award-winning poet, and devoted father of six.</p>
-                </div>
-                
-                <div class="team-member">
-                    <img src="assets/images/Austin.jpg" alt="Austin Kelly - Creative Producer">
-                    <h4>Austin Kelly</h4>
-                    <div class="role">Creative Producer</div>
-                    <p>An accomplished creative producer with diverse development experience ranging from comedy television to animation film. Past experience at Netflix, ESPN, and top talent agencies. Excels at anticipating media trends and sourcing unique talent.</p>
-                </div>
-                
-                <div class="team-member">
-                    <h4>Alan Greenstein</h4>
-                    <div class="role">Producer at Support Our #creatives®</div>
-                    <p>Working in entertainment since 2009, Alan offers services in various aspects of production, including publicizing, funding/investing, social media management, and on-set work. Passionate about helping filmmakers bring their projects to life.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Meet the Professional Team</h2>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="assets/images/Ashley.jpg" alt="Ashley LaRae - Producer & CEO of LR Entertainment" />
+            <h4>Ashley LaRae</h4>
+            <div class="role">Producer & CEO of LR Entertainment</div>
+            <p>A seasoned producer bringing over 12 years of filmmaking experience to the industry. She has produced the award-winning short film Finding Home and developed two pilots. Ashley has contributed to major studio productions such as Fatale, Persecuted, and SWAT.</p>
+          </div>
+
+          <div class="team-member">
+            <img src="assets/images/rich.jpeg" alt="Rich Bella - Cinematographer & Creative Executive" />
+            <h4>Rich Bella</h4>
+            <div class="role">Cinematographer & Creative Executive</div>
+            <p>A Filipino-American Creative Executive and Cinematographer with 15 years of experience. His portfolio boasts over 15 short films, 5 feature-length productions, and commercial work for international brands. A best-selling author, award-winning poet, and devoted father of six.</p>
+          </div>
+
+          <div class="team-member">
+            <img src="assets/images/Austin.jpg" alt="Austin Kelly - Creative Producer" />
+            <h4>Austin Kelly</h4>
+            <div class="role">Creative Producer</div>
+            <p>An accomplished creative producer with diverse development experience ranging from comedy television to animation film. Past experience at Netflix, ESPN, and top talent agencies. Excels at anticipating media trends and sourcing unique talent.</p>
+          </div>
+
+          <div class="team-member">
+            <h4>Alan Greenstein</h4>
+            <div class="role">Producer at Support Our #creatives®</div>
+            <p>Working in entertainment since 2009, Alan offers services in various aspects of production, including publicizing, funding/investing, social media management, and on-set work. Passionate about helping filmmakers bring their projects to life.</p>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Inclusion Section -->
     <div class="inclusion-section">
-        <div class="container">
-            <h2>Representation, Inclusion & Impact</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
-                We are committed to inclusion, both in front of and behind the camera.
-            </p>
-            
-            <div class="autism-highlight">
-                <h3 style="color: #f1c40f;">Young Adults on the Autism Spectrum</h3>
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    My eldest son, RK Jr., is on the autism spectrum. For nearly two decades, he's thrived at Pathpoint, Inc., 
-                    a program supporting neurodiverse adults.                     During production of ONE NIGHT IN LA, RK became fascinated by 
-                    the filmmaking process — and I saw his light ignite.
-                </p>
-                <p style="margin-top: 1.5rem;">
-                    <strong>Because of him, I've created a program that brings 5 young adults with autism onto our film crew.</strong>
-                    They'll contribute to wardrobe, lighting, set design, and production support — after completing a custom 
-                    filmmaking curriculum designed to meet them where they are.
-                </p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <h3 style="color: #f1c40f;">🎉 Wrap Party Celebration</h3>
-                <p>I've hosted several Annual Celebrations for Special Young Adults with Disabilities, and I look forward to 
-                hosting another one when ONE NIGHT IN LA has its wrap party. We'll invite the Hollywood Celebrity community to join us!</p>
-            </div>
+      <div class="container">
+        <h2>Representation, Inclusion & Impact</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem">We are committed to inclusion, both in front of and behind the camera.</p>
+
+        <div class="autism-highlight">
+          <h3 style="color: #f1c40f">Young Adults on the Autism Spectrum</h3>
+          <p style="font-size: 1.1rem; line-height: 1.8">My eldest son, RK Jr., is on the autism spectrum. For nearly two decades, he's thrived at Pathpoint, Inc., a program supporting neurodiverse adults. During production of ONE NIGHT IN LA, RK became fascinated by the filmmaking process — and I saw his light ignite.</p>
+          <p style="margin-top: 1.5rem">
+            <strong>Because of him, I've created a program that brings 5 young adults with autism onto our film crew.</strong>
+            They'll contribute to wardrobe, lighting, set design, and production support — after completing a custom filmmaking curriculum designed to meet them where they are.
+          </p>
         </div>
+
+        <div style="text-align: center; margin-top: 3rem">
+          <h3 style="color: #f1c40f">🎉 Wrap Party Celebration</h3>
+          <p>I've hosted several Annual Celebrations for Special Young Adults with Disabilities, and I look forward to hosting another one when ONE NIGHT IN LA has its wrap party. We'll invite the Hollywood Celebrity community to join us!</p>
+        </div>
+      </div>
     </div>
 
     <!-- Investment Section -->
     <div class="investment-section">
-        <div class="container">
-            <h2>Join the Movement — Support the Film</h2>
-                            <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                ONE NIGHT IN LA © is more than a movie — it's a legacy of hope, strength, and inclusion.
-            </p>
-            
-            <div class="investment-tiers">
-                <div class="tier">
-                    <h4>Associate Producer</h4>
-                    <div class="price">Investment Tier</div>
-                    <ul style="text-align: left; margin: 1rem 0;">
-                        <li>Screen credit as Associate Producer</li>
-                        <li>Behind-the-scenes access</li>
-                        <li>Wrap party invitation</li>
-                        <li>Signed movie poster</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">Learn More</a>
-                </div>
-                
-                <div class="tier">
-                    <h4>Executive Producer</h4>
-                    <div class="price">Investment Tier</div>
-                    <ul style="text-align: left; margin: 1rem 0;">
-                        <li>Executive Producer credit</li>
-                        <li>Set visit opportunities</li>
-                        <li>Input on creative decisions</li>
-                        <li>Premiere event access</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">Learn More</a>
-                </div>
-                
-                <div class="tier">
-                    <h4>Legacy Supporter</h4>
-                    <div class="price">Any Amount</div>
-                    <ul style="text-align: left; margin: 1rem 0;">
-                        <li>Thank you in film credits</li>
-                        <li>Digital copy of film</li>
-                        <li>Regular updates</li>
-                        <li>Community access</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">Support Now</a>
-                </div>
-            </div>
-            
-            <p style="font-size: 1.1rem; margin-top: 2rem;">
-                Your investment helps bring this story to life, supports autistic adults in film, 
-                and celebrates the perseverance of women and families everywhere.
-            </p>
+      <div class="container">
+        <h2>Join the Movement — Support the Film</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem">ONE NIGHT IN LA © is more than a movie — it's a legacy of hope, strength, and inclusion.</p>
+
+        <div class="investment-tiers">
+          <div class="tier">
+            <h4>Associate Producer</h4>
+            <div class="price">Investment Tier</div>
+            <ul style="text-align: left; margin: 1rem 0">
+              <li>Screen credit as Associate Producer</li>
+              <li>Behind-the-scenes access</li>
+              <li>Wrap party invitation</li>
+              <li>Signed movie poster</li>
+            </ul>
+            <a href="#contact" class="cta-button">Learn More</a>
+          </div>
+
+          <div class="tier">
+            <h4>Executive Producer</h4>
+            <div class="price">Investment Tier</div>
+            <ul style="text-align: left; margin: 1rem 0">
+              <li>Executive Producer credit</li>
+              <li>Set visit opportunities</li>
+              <li>Input on creative decisions</li>
+              <li>Premiere event access</li>
+            </ul>
+            <a href="#contact" class="cta-button">Learn More</a>
+          </div>
+
+          <div class="tier">
+            <h4>Legacy Supporter</h4>
+            <div class="price">Any Amount</div>
+            <ul style="text-align: left; margin: 1rem 0">
+              <li>Thank you in film credits</li>
+              <li>Digital copy of film</li>
+              <li>Regular updates</li>
+              <li>Community access</li>
+            </ul>
+            <a href="#contact" class="cta-button">Support Now</a>
+          </div>
         </div>
+
+        <p style="font-size: 1.1rem; margin-top: 2rem">Your investment helps bring this story to life, supports autistic adults in film, and celebrates the perseverance of women and families everywhere.</p>
+      </div>
     </div>
 
     <!-- Legacy Section -->
     <div class="legacy-section">
-        <div class="container">
-            <h2>A Seven-Year Legacy Project</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                💛 This project has been seven years in the making — born in my MFA program, and fueled by my mother's legacy.
-            </p>
-            
-            <div class="stats">
-                <div class="stat">
-                    <span class="number">7</span>
-                    Years in Development
-                </div>
-                <div class="stat">
-                    <span class="number">5</span>
-                    Autistic Adults Hired
-                </div>
-                <div class="stat">
-                    <span class="number">PG</span>
-                    Family Rating
-                </div>
-                <div class="stat">
-                    <span class="number">1</span>
-                    Successful Film on Tubi
-                </div>
-            </div>
-            
-            <p style="font-style: italic; font-size: 1.1rem;">
-                "A beautiful family movie about a biracial Mom — her Mom is white. 
-                My grandkids are bi-racial so this is a legacy movie for me."
-            </p>
+      <div class="container">
+        <h2>A Seven-Year Legacy Project</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem">💛 This project has been seven years in the making — born in my MFA program, and fueled by my mother's legacy.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="number">7</span>
+            Years in Development
+          </div>
+          <div class="stat">
+            <span class="number">5</span>
+            Autistic Adults Hired
+          </div>
+          <div class="stat">
+            <span class="number">PG</span>
+            Family Rating
+          </div>
+          <div class="stat">
+            <span class="number">1</span>
+            Successful Film on Tubi
+          </div>
         </div>
+
+        <p style="font-style: italic; font-size: 1.1rem">"A beautiful family movie about a biracial Mom — her Mom is white. My grandkids are bi-racial so this is a legacy movie for me."</p>
+      </div>
     </div>
 
     <!-- Virtual Talk Back Section -->
     <div class="section">
-        <div class="container">
-            <h2>Join Our Virtual Talk Back</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; text-align: center;">
-                Connect with MeMe Kelly and the ONE NIGHT IN LA community in our exclusive virtual talk back session
-            </p>
-            
-                         <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 3rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
-                 <h3 style="color: #f1c40f; margin-bottom: 1rem;">🎬 Virtual SHOUT Talk Back</h3>
-                 <h4 style="color: #f1c40f; margin-bottom: 1.5rem; font-size: 1.3rem;">October 5, 2025, 3 p.m. PST</h4>
-                 <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6;">
-                     Join us for an intimate virtual screening and powerful discussion about love, purpose, and the SHOUT Method. 
-                     Connect with MeMe Kelly and fellow viewers as we explore the themes and messages of ONE NIGHT IN LA.
-                 </p>
-                
-                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
-                    <h4 style="color: #f1c40f; margin-bottom: 1rem;">What You'll Experience:</h4>
-                    <ul style="text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8;">
-                        <li>🎥 Virtual screening of ONE NIGHT IN LA</li>
-                        <li>💬 Interactive Q&A with MeMe Kelly</li>
-                        <li>🌟 SHOUT Method insights and applications</li>
-                        <li>🤝 Community connection and support</li>
-                        <li>🎁 Exclusive behind-the-scenes content</li>
-                    </ul>
-                </div>
-                
-                <a href="https://www.eventbrite.com/e/one-night-virtual-screening-powerful-voices-of-love-purpose-talk-back-tickets-1493498065919?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #e74c3c, #c0392b); font-size: 1.2rem; padding: 1.5rem 3rem;">
-                    🎫 Attend Free Virtual SHOUT!
-                </a>
-                
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
-                    Free event - Limited spots available
-                </p>
-            </div>
+      <div class="container">
+        <h2>Join Our Virtual Talk Back</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; text-align: center">Connect with MeMe Kelly and the ONE NIGHT IN LA community in our exclusive virtual talk back session</p>
+
+        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 3rem; border-radius: 15px; text-align: center; margin: 2rem 0">
+          <h3 style="color: #f1c40f; margin-bottom: 1rem">🎬 Virtual SHOUT Talk Back</h3>
+          <h4 style="color: #f1c40f; margin-bottom: 1.5rem; font-size: 1.3rem">October 5, 2025, 3 p.m. PST</h4>
+          <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6">Join us for an intimate virtual screening and powerful discussion about love, purpose, and the SHOUT Method. Connect with MeMe Kelly and fellow viewers as we explore the themes and messages of ONE NIGHT IN LA.</p>
+
+          <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px; margin: 2rem 0">
+            <h4 style="color: #f1c40f; margin-bottom: 1rem">What You'll Experience:</h4>
+            <ul style="text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.8">
+              <li>🎥 Virtual screening of ONE NIGHT IN LA</li>
+              <li>💬 Interactive Q&A with MeMe Kelly</li>
+              <li>🌟 SHOUT Method insights and applications</li>
+              <li>🤝 Community connection and support</li>
+              <li>🎁 Exclusive behind-the-scenes content</li>
+            </ul>
+          </div>
+
+          <a href="https://www.eventbrite.com/e/one-night-virtual-screening-powerful-voices-of-love-purpose-talk-back-tickets-1493498065919?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl" target="_blank" class="cta-button" style="background: linear-gradient(135deg, #e74c3c, #c0392b); font-size: 1.2rem; padding: 1.5rem 3rem"> 🎫 Attend Free Virtual SHOUT! </a>
+
+          <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9">Free event - Limited spots available</p>
         </div>
+      </div>
     </div>
 
     <!-- Contact Section -->
     <div class="contact-section" id="contact">
-        <div class="container">
-            <h2>Ready to Join Our Journey?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                November 2025 filming begins - be part of this inspiring story
-            </p>
-            
-                         <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; max-width: 600px; margin: 0 auto;">
-                 <h3 style="color: #2c3e50; margin-bottom: 1rem;">Investment Opportunities Available</h3>
-                <p style="margin-bottom: 1.5rem;">Contact MeMe Kelly directly to discuss associate producer packages and investment tiers.</p>
-                
-                <p style="margin-top: 1.5rem; font-size: 1.1rem; color: #2c3e50; text-align: center; font-weight: bold;">
-                    📧 <strong>memekellyinspires@gmail.com</strong>
-                </p>
-                
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #7f8c8d; text-align: center;">
-                    🎬 Watch "One Night in LA" on Tubi<br>
-                    📖 Get "SHOUT Through Anything" for $3.33
-                </p>
-            </div>
+      <div class="container">
+        <h2>Ready to Join Our Journey?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem">November 2025 filming begins - be part of this inspiring story</p>
+
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; max-width: 600px; margin: 0 auto">
+          <h3 style="color: #2c3e50; margin-bottom: 1rem">Investment Opportunities Available</h3>
+          <p style="margin-bottom: 1.5rem">Contact MeMe Kelly directly to discuss associate producer packages and investment tiers.</p>
+
+          <p style="margin-top: 1.5rem; font-size: 1.1rem; color: #2c3e50; text-align: center; font-weight: bold">📧 <strong>memekellyinspires@gmail.com</strong></p>
+
+          <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #7f8c8d; text-align: center">
+            🎬 Watch "One Night in LA" on Tubi<br />
+            📖 Get "SHOUT Through Anything" for $3.33
+          </p>
         </div>
+      </div>
     </div>
-</body>
+    <script src="/mobilenav.js"></script>
+  </body>
 </html>

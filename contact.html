@@ -1,536 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact MeMe Kelly - SHOUT Method</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-        
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f39c12;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #f39c12;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f39c12);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-        
-        /* Contact Grid */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f39c12;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      .nav-menu a:hover {
+        color: #f39c12;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4rem 0 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fff, #f39c12);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #2c3e50;
+      }
+
+      /* Contact Grid */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+      }
+
+      .contact-info {
+        background: white;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form {
+        background: white;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 5px solid #3498db;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #3498db, #2980b9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .contact-details h4 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-details p {
+        color: #666;
+        margin: 0;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+
+      .form-group textarea {
+        height: 120px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+      }
+
+      /* Social Media Section */
+      .social-section {
+        background: #f8f9fa;
+        padding: 4rem 0;
+      }
+
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .social-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .social-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .social-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg, #3498db, #2980b9);
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
         }
-        
-        .contact-info {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        .hero h1 {
+          font-size: 2.5rem;
         }
-        
-        .contact-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background-color: #222;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 200px;
+          padding: 1rem;
         }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 5px solid #3498db;
+
+        .nav-menu.active {
+          display: flex;
         }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            color: white;
-            font-size: 1.2rem;
+
+        /* Hamburger icon */
+        .hamburger {
+          display: block;
+          font-size: 2rem;
+          cursor: pointer;
         }
-        
-        .contact-details h4 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-details p {
-            color: #666;
-            margin: 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-        
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
-        }
-        
-        /* Social Media Section */
-        .social-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .social-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .social-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="nav-container">
-            <div class="logo">MeMe Kelly Presents: SHOUT</div>
-            <nav>
-                                 <ul class="nav-menu">
-                     <li><a href="home.html">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="method_page.html">The Method</a></li>
-                     <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
-                     <li><a href="masterclass.html">Masterclass</a></li>
-                     <li><a href="filmmoviepage.html">Film Project</a></li>
-                     <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
-        </div>
+      <div class="nav-container">
+        <div class="logo">MeMe Kelly Presents: SHOUT</div>
+        <nav class="navbar">
+          <ul class="nav-menu" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="method_page.html">The Method</a></li>
+            <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
+            <li><a href="masterclass.html">Masterclass</a></li>
+            <li><a href="filmmoviepage.html">Film Project</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">☰</div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Get in Touch</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Ready to transform your obstacles into opportunities? Let's connect!</p>
-        </div>
+      <div class="hero-content">
+        <h1>Get in Touch</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9">Ready to transform your obstacles into opportunities? Let's connect!</p>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section">
-        <div class="container">
-            <h2 class="section-title">Contact MeMe Kelly</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3 style="color: #2c3e50; margin-bottom: 2rem; font-size: 1.8rem;">Let's Connect</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>memekellyinspires@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🎬</div>
-                        <div class="contact-details">
-                            <h4>Film Project</h4>
-                            <p>Watch "ONE NIGHT IN LA" now available on Tubi TV</p>
-                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                                <a href="https://tubitv.com/movies/100031010/one-night-in-la" target="_blank" style="color: #3498db;">Watch on Tubi TV</a> | 
-                                <a href="https://www.onenightinlamovie.com" target="_blank" style="color: #3498db;">Official Website</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📚</div>
-                        <div class="contact-details">
-                            <h4>Books & Resources</h4>
-                            <p>Available at elevatedstories.me/store</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🎯</div>
-                        <div class="contact-details">
-                            <h4>SHOUT Method</h4>
-                            <p>Masterclass and coaching opportunities</p>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #e8f5e9; padding: 2rem; border-radius: 10px; margin-top: 2rem; border-left: 5px solid #27ae60;">
-                        <h4 style="color: #27ae60; margin-bottom: 1rem;">📖 SHOUT THROUGH ANYTHING eBook, Chapter 3 Only</h4>
-                        <p style="margin-bottom: 1rem;">Get "SHOUT Through Anything" Chapter 3 for FREE</p>
-                        <button onclick="showEmailForm()" style="background: #27ae60; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 25px; display: inline-block; border: none; cursor: pointer; font-size: 1rem;">Get Free Chapter 3, Obstacles to Opportunity of eBook</button>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3 style="color: #2c3e50; margin-bottom: 2rem; font-size: 1.8rem;">Send a Message</h3>
-                    
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a topic</option>
-                                <option value="shout-method">SHOUT Method Questions</option>
-                                <option value="film-investment">Film Investment Opportunities</option>
-                                <option value="coaching">Coaching & Masterclass</option>
-                                <option value="books">Books & Resources</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your obstacles and how I can help you transform them into opportunities..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Contact MeMe Kelly</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 style="color: #2c3e50; margin-bottom: 2rem; font-size: 1.8rem">Let's Connect</h3>
+
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>memekellyinspires@gmail.com</p>
+              </div>
             </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🎬</div>
+              <div class="contact-details">
+                <h4>Film Project</h4>
+                <p>Watch "ONE NIGHT IN LA" now available on Tubi TV</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem">
+                  <a href="https://tubitv.com/movies/100031010/one-night-in-la" target="_blank" style="color: #3498db">Watch on Tubi TV</a> |
+                  <a href="https://www.onenightinlamovie.com" target="_blank" style="color: #3498db">Official Website</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">📚</div>
+              <div class="contact-details">
+                <h4>Books & Resources</h4>
+                <p>Available at elevatedstories.me/store</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🎯</div>
+              <div class="contact-details">
+                <h4>SHOUT Method</h4>
+                <p>Masterclass and coaching opportunities</p>
+              </div>
+            </div>
+
+            <div style="background: #e8f5e9; padding: 2rem; border-radius: 10px; margin-top: 2rem; border-left: 5px solid #27ae60">
+              <h4 style="color: #27ae60; margin-bottom: 1rem">📖 SHOUT THROUGH ANYTHING eBook, Chapter 3 Only</h4>
+              <p style="margin-bottom: 1rem">Get "SHOUT Through Anything" Chapter 3 for FREE</p>
+              <button onclick="showEmailForm()" style="background: #27ae60; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 25px; display: inline-block; border: none; cursor: pointer; font-size: 1rem">Get Free Chapter 3, Obstacles to Opportunity of eBook</button>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3 style="color: #2c3e50; margin-bottom: 2rem; font-size: 1.8rem">Send a Message</h3>
+
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a topic</option>
+                  <option value="shout-method">SHOUT Method Questions</option>
+                  <option value="film-investment">Film Investment Opportunities</option>
+                  <option value="coaching">Coaching & Masterclass</option>
+                  <option value="books">Books & Resources</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Tell me about your obstacles and how I can help you transform them into opportunities..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Social Media Section -->
     <section class="social-section">
-        <div class="container">
-            <h2 class="section-title">Connect & Follow</h2>
-            
-            <div class="social-grid">
-                <div class="social-card">
-                    <div class="social-icon">📰</div>
-                    <h4>Substack</h4>
-                    <p>"The Art of Survival with MeMe Kelly"</p>
-                    <p style="color: #3498db; font-weight: bold;">Weekly inspiration & insights</p>
-                </div>
-                
-                <div class="social-card">
-                    <div class="social-icon">📺</div>
-                    <h4>Tubi</h4>
-                    <p>Watch "ONE NIGHT IN LA"</p>
-                    <p style="color: #3498db; font-weight: bold;">Streaming now</p>
-                </div>
-                
-                <div class="social-card">
-                    <div class="social-icon">📚</div>
-                    <h4>Published Works</h4>
-                    <p>Multiple novels and inspirational books</p>
-                    <p style="color: #3498db; font-weight: bold;">Available online</p>
-                </div>
-                
-                <div class="social-card">
-                    <div class="social-icon">🎬</div>
-                    <h4>Film Project</h4>
-                    <p>"Every Night in LA" - Coming Soon</p>
-                    <p style="color: #3498db; font-weight: bold;">Investment opportunities available</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Connect & Follow</h2>
+
+        <div class="social-grid">
+          <div class="social-card">
+            <div class="social-icon">📰</div>
+            <h4>Substack</h4>
+            <p>"The Art of Survival with MeMe Kelly"</p>
+            <p style="color: #3498db; font-weight: bold">Weekly inspiration & insights</p>
+          </div>
+
+          <div class="social-card">
+            <div class="social-icon">📺</div>
+            <h4>Tubi</h4>
+            <p>Watch "ONE NIGHT IN LA"</p>
+            <p style="color: #3498db; font-weight: bold">Streaming now</p>
+          </div>
+
+          <div class="social-card">
+            <div class="social-icon">📚</div>
+            <h4>Published Works</h4>
+            <p>Multiple novels and inspirational books</p>
+            <p style="color: #3498db; font-weight: bold">Available online</p>
+          </div>
+
+          <div class="social-card">
+            <div class="social-icon">🎬</div>
+            <h4>Film Project</h4>
+            <p>"Every Night in LA" - Coming Soon</p>
+            <p style="color: #3498db; font-weight: bold">Investment opportunities available</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
+      </div>
     </footer>
 
     <!-- Email Form Modal -->
-    <div id="emailModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeEmailModal()">&times;</span>
-            <h2>Get Your Free Chapter 3 eBook</h2>
-            <p>Enter your email to receive Chapter 3 of "SHOUT Through Anything" for FREE</p>
-            
-            <form id="emailForm" onsubmit="handleEmailSubmit(event)">
-                <div class="form-group">
-                    <label for="modalFirstName">First Name *</label>
-                    <input type="text" id="modalFirstName" name="firstName" required placeholder="Enter your first name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalEmail">Email Address *</label>
-                    <input type="email" id="modalEmail" name="email" required placeholder="Enter your best email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalChallenge">Current Challenge (Optional)</label>
-                    <input type="text" id="modalChallenge" name="challenge" placeholder="e.g., Career transition, Job loss, Business failure">
-                </div>
-                
-                <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem;">
-                    <span class="btn-text">Get My Free Chapter 3</span>
-                    <span class="loading" style="display: none;">Sending...</span>
-                </button>
-            </form>
-        </div>
+    <div id="emailModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeEmailModal()">&times;</span>
+        <h2>Get Your Free Chapter 3 eBook</h2>
+        <p>Enter your email to receive Chapter 3 of "SHOUT Through Anything" for FREE</p>
+
+        <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+          <div class="form-group">
+            <label for="modalFirstName">First Name *</label>
+            <input type="text" id="modalFirstName" name="firstName" required placeholder="Enter your first name" />
+          </div>
+
+          <div class="form-group">
+            <label for="modalEmail">Email Address *</label>
+            <input type="email" id="modalEmail" name="email" required placeholder="Enter your best email" />
+          </div>
+
+          <div class="form-group">
+            <label for="modalChallenge">Current Challenge (Optional)</label>
+            <input type="text" id="modalChallenge" name="challenge" placeholder="e.g., Career transition, Job loss, Business failure" />
+          </div>
+
+          <button type="submit" class="submit-btn" style="width: 100%; margin-top: 1rem">
+            <span class="btn-text">Get My Free Chapter 3</span>
+            <span class="loading" style="display: none">Sending...</span>
+          </button>
+        </form>
+      </div>
     </div>
 
     <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-        }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+      }
     </style>
 
     <script>
-        function showEmailForm() {
-            document.getElementById('emailModal').style.display = 'block';
-            
-            // Pre-fill email if available
-            const emailInput = document.getElementById('modalEmail');
-            if (localStorage.getItem('user_email')) {
-                emailInput.value = localStorage.getItem('user_email');
-            }
+      function showEmailForm() {
+        document.getElementById("emailModal").style.display = "block"
+
+        // Pre-fill email if available
+        const emailInput = document.getElementById("modalEmail")
+        if (localStorage.getItem("user_email")) {
+          emailInput.value = localStorage.getItem("user_email")
         }
-        
-        function closeEmailModal() {
-            document.getElementById('emailModal').style.display = 'none';
-            document.getElementById('emailForm').reset();
-        }
-        
-        function showThankYouMessage(message) {
-            // Create modal for thank you message
-            const modal = document.createElement('div');
-            modal.style.cssText = `
+      }
+
+      function closeEmailModal() {
+        document.getElementById("emailModal").style.display = "none"
+        document.getElementById("emailForm").reset()
+      }
+
+      function showThankYouMessage(message) {
+        // Create modal for thank you message
+        const modal = document.createElement("div")
+        modal.style.cssText = `
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -541,9 +564,9 @@
                 justify-content: center;
                 align-items: center;
                 z-index: 10000;
-            `;
-            
-            modal.innerHTML = `
+            `
+
+        modal.innerHTML = `
                 <div style="
                     background: white;
                     padding: 2rem;
@@ -566,95 +589,96 @@
                         transition: all 0.3s ease;
                     ">Close</button>
                 </div>
-            `;
-            
-            document.body.appendChild(modal);
+            `
+
+        document.body.appendChild(modal)
+      }
+
+      function handleEmailSubmit(event) {
+        event.preventDefault()
+
+        // Show loading state
+        const btnText = event.target.querySelector(".btn-text")
+        const loading = event.target.querySelector(".loading")
+        const submitBtn = event.target.querySelector('button[type="submit"]')
+
+        btnText.style.display = "none"
+        loading.style.display = "inline"
+        submitBtn.disabled = true
+
+        // Get form data
+        const formData = {
+          firstName: document.getElementById("modalFirstName").value,
+          email: document.getElementById("modalEmail").value,
+          challenge: document.getElementById("modalChallenge").value,
+          timestamp: new Date().toISOString(),
+          source: "Contact_Page_Email_Form"
         }
-        
-        function handleEmailSubmit(event) {
-            event.preventDefault();
-            
-            // Show loading state
-            const btnText = event.target.querySelector('.btn-text');
-            const loading = event.target.querySelector('.loading');
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            
-            btnText.style.display = 'none';
-            loading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                firstName: document.getElementById('modalFirstName').value,
-                email: document.getElementById('modalEmail').value,
-                challenge: document.getElementById('modalChallenge').value,
-                timestamp: new Date().toISOString(),
-                source: 'Contact_Page_Email_Form'
-            };
-            
-            // Store email for future use
-            localStorage.setItem('user_email', formData.email);
-            
-            // Mailchimp API call
-            const mailchimpData = {
-                email_address: formData.email,
-                status: 'subscribed',
-                merge_fields: {
-                    FNAME: formData.firstName,
-                    CHALLENGE: formData.challenge || 'Not specified'
-                }
-            };
-            
-            fetch('https://us1.api.mailchimp.com/3.0/lists/a13d8a9e0b/members', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'apikey 9328d1805eda3bf1327f2255808232d9-us14',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(mailchimpData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Mailchimp success:', data);
-                showSuccessMessage();
-            })
-            .catch(error => {
-                console.error('Mailchimp error:', error);
-                // Fallback to local storage if API fails
-                saveToLocalStorage(formData);
-                showSuccessMessage();
-            });
-            
-            function saveToLocalStorage(data) {
-                const leads = JSON.parse(localStorage.getItem('shout_leads') || '[]');
-                leads.push(data);
-                localStorage.setItem('shout_leads', JSON.stringify(leads));
-                console.log('Lead saved to localStorage:', data);
-            }
-            
-            function showSuccessMessage() {
-                // Close modal
-                closeEmailModal();
-                
-                // Show success message
-                showThankYouMessage('Thank you! You have been successfully added to our email list. Check your email for exclusive SHOUT Method content and Chapter 3 details.');
-                
-                // Reset button state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-                
-                console.log('Lead captured:', formData);
-            }
+
+        // Store email for future use
+        localStorage.setItem("user_email", formData.email)
+
+        // Mailchimp API call
+        const mailchimpData = {
+          email_address: formData.email,
+          status: "subscribed",
+          merge_fields: {
+            FNAME: formData.firstName,
+            CHALLENGE: formData.challenge || "Not specified"
+          }
         }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const emailModal = document.getElementById('emailModal');
-            if (event.target === emailModal) {
-                closeEmailModal();
-            }
+
+        fetch("https://us1.api.mailchimp.com/3.0/lists/a13d8a9e0b/members", {
+          method: "POST",
+          headers: {
+            Authorization: "apikey 9328d1805eda3bf1327f2255808232d9-us14",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(mailchimpData)
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log("Mailchimp success:", data)
+            showSuccessMessage()
+          })
+          .catch(error => {
+            console.error("Mailchimp error:", error)
+            // Fallback to local storage if API fails
+            saveToLocalStorage(formData)
+            showSuccessMessage()
+          })
+
+        function saveToLocalStorage(data) {
+          const leads = JSON.parse(localStorage.getItem("shout_leads") || "[]")
+          leads.push(data)
+          localStorage.setItem("shout_leads", JSON.stringify(leads))
+          console.log("Lead saved to localStorage:", data)
         }
+
+        function showSuccessMessage() {
+          // Close modal
+          closeEmailModal()
+
+          // Show success message
+          showThankYouMessage("Thank you! You have been successfully added to our email list. Check your email for exclusive SHOUT Method content and Chapter 3 details.")
+
+          // Reset button state
+          btnText.style.display = "inline"
+          loading.style.display = "none"
+          submitBtn.disabled = false
+
+          console.log("Lead captured:", formData)
+        }
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const emailModal = document.getElementById("emailModal")
+        if (event.target === emailModal) {
+          closeEmailModal()
+        }
+      }
     </script>
-</body>
+    <script src="/mobilenav.js"></script>
+  </body>
 </html>

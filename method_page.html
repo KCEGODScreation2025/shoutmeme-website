@@ -1,873 +1,849 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The SHOUT Method - MeMe Kelly | Free Gift + Ebook Purchase</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-        
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f39c12;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #f39c12;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f39c12);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-        
-        /* Method Overview */
-        .method-overview {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .method-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .method-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            border-top: 5px solid #3498db;
-            transition: transform 0.3s ease;
-        }
-        
-        .method-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .method-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .method-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        
-        .method-details {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* Products Section */
-        .products-section {
-            background: white;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f39c12;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      .nav-menu a:hover {
+        color: #f39c12;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4rem 0 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fff, #f39c12);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #2c3e50;
+      }
+
+      /* Method Overview */
+      .method-overview {
+        background: #f8f9fa;
+        padding: 4rem 0;
+      }
+
+      .method-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .method-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-top: 5px solid #3498db;
+        transition: transform 0.3s ease;
+      }
+
+      .method-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .method-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(45deg, #3498db, #2980b9);
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .method-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+
+      .method-details {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Products Section */
+      .products-section {
+        background: white;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        border: 2px solid #e9ecef;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-header {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .product-header h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .product-original-price {
+        text-decoration: line-through;
+        opacity: 0.8;
+        font-size: 1.2rem;
+      }
+
+      .product-body {
+        padding: 2rem;
+      }
+
+      .product-features {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+
+      .product-features li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f1f1f1;
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .product-features li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #27ae60;
+        font-weight: bold;
+      }
+
+      .product-features li:last-child {
+        border-bottom: none;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        padding: 1.2rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+      }
+
+      .cta-button.free {
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+      }
+
+      .cta-button.free:hover {
+        box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+      }
+
+      /* Testimonials */
+      .testimonials-section {
+        background: #f8f9fa;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .testimonial-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid #3498db;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: #555;
+      }
+
+      .testimonial-author {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #ecf0f1;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
         }
-        
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            border: 2px solid #e9ecef;
+
+        .hero h1 {
+          font-size: 2.5rem;
         }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background-color: #222;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 200px;
+          padding: 1rem;
         }
-        
-        .product-header {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
-            padding: 2rem;
-            text-align: center;
+
+        .nav-menu.active {
+          display: flex;
         }
-        
-        .product-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+
+        /* Hamburger icon */
+        .hamburger {
+          display: block;
+          font-size: 2rem;
+          cursor: pointer;
         }
-        
-        .product-price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+
+        .modal-content {
+          width: 95%;
+          margin: 1rem;
+          padding: 1.5rem;
         }
-        
-        .product-original-price {
-            text-decoration: line-through;
-            opacity: 0.8;
-            font-size: 1.2rem;
-        }
-        
-        .product-body {
-            padding: 2rem;
-        }
-        
-        .product-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-        
-        .product-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f1f1f1;
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .product-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #27ae60;
-            font-weight: bold;
-        }
-        
-        .product-features li:last-child {
-            border-bottom: none;
-        }
-        
-        .cta-button {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
-            padding: 1.2rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
-        }
-        
-        .cta-button.free {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-        }
-        
-        .cta-button.free:hover {
-            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
-        }
-        
-        /* Testimonials */
-        .testimonials-section {
-            background: #f8f9fa;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #3498db;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: #555;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #ecf0f1;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .modal-content {
-                width: 95%;
-                margin: 1rem;
-                padding: 1.5rem;
-            }
-        }
-        
-        
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="nav-container">
-            <div class="logo">MeMe Kelly Presents: SHOUT</div>
-            <nav>
-                                 <ul class="nav-menu">
-                     <li><a href="home.html">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="method_page.html">The Method</a></li>
-                     <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
-                     <li><a href="masterclass.html">Masterclass</a></li>
-                     <li><a href="filmmoviepage.html">Film Project</a></li>
-                     <li><a href="contact.html">Contact</a></li>
-                 </ul>
-            </nav>
-        </div>
+      <div class="nav-container">
+        <div class="logo">MeMe Kelly Presents: SHOUT</div>
+        <nav class="navbar">
+          <ul class="nav-menu" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="method_page.html">The Method</a></li>
+            <li><a href="urgent_shout_kit.html">Urgent Kit</a></li>
+            <li><a href="masterclass.html">Masterclass</a></li>
+            <li><a href="filmmoviepage.html">Film Project</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">☰</div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>The SHOUT Method</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Transform obstacles into opportunities with this proven framework</p>
-        </div>
+      <div class="hero-content">
+        <h1>The SHOUT Method</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9">Transform obstacles into opportunities with this proven framework</p>
+      </div>
     </section>
 
     <!-- Method Overview -->
     <section class="section method-overview">
-        <div class="container">
-            <h2 class="section-title">What is the SHOUT Method?</h2>
-            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; color: #666;">
-                The SHOUT Method is a systematic approach to transforming obstacles into opportunities. 
-                Born from three generations of barrier-breaking women, this framework has been proven 
-                to work in real life - from elementary teacher to playwright to festival-selected, award-winning filmmaker.
-            </p>
-            
-            <div class="method-grid">
-                <div class="method-card">
-                    <div class="method-icon">🎯</div>
-                    <div class="method-title">Systematic Approach</div>
-                    <div class="method-details">
-                        A structured framework that breaks down any obstacle into manageable, actionable steps that lead to transformation.
-                    </div>
-                </div>
-                
-                <div class="method-card">
-                    <div class="method-icon">💪</div>
-                    <div class="method-title">Proven Results</div>
-                    <div class="method-details">
-                        Tested and refined through real-life application - from teaching to playwriting to filmmaking.
-                    </div>
-                </div>
-                
-                <div class="method-card">
-                    <div class="method-icon">🌟</div>
-                    <div class="method-title">Legacy Framework</div>
-                    <div class="method-details">
-                        Built on three generations of women who refused to let limitations define their possibilities.
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">What is the SHOUT Method?</h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; color: #666">The SHOUT Method is a systematic approach to transforming obstacles into opportunities. Born from three generations of barrier-breaking women, this framework has been proven to work in real life - from elementary teacher to playwright to festival-selected, award-winning filmmaker.</p>
+
+        <div class="method-grid">
+          <div class="method-card">
+            <div class="method-icon">🎯</div>
+            <div class="method-title">Systematic Approach</div>
+            <div class="method-details">A structured framework that breaks down any obstacle into manageable, actionable steps that lead to transformation.</div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">💪</div>
+            <div class="method-title">Proven Results</div>
+            <div class="method-details">Tested and refined through real-life application - from teaching to playwriting to filmmaking.</div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">🌟</div>
+            <div class="method-title">Legacy Framework</div>
+            <div class="method-details">Built on three generations of women who refused to let limitations define their possibilities.</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Products Section -->
     <section class="section products-section">
-        <div class="container">
-            <h2 class="section-title">Get Started with SHOUT</h2>
-            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; color: #666;">
-                Choose your path to transformation. Start with the free gift or dive deep with the complete ebook.
-            </p>
-            
-                                      <div class="products-grid">
-                 <!-- Free Gift -->
-                 <div class="product-card">
-                     <div class="product-header">
-                         <h3>SHOUT THROUGH ANYTHING eBook, Chapter 3 Only</h3>
-                         <div class="product-price">FREE</div>
-                         <p>Start your SHOUT journey today</p>
-                     </div>
-                     <div class="product-body">
-                         <h4 style="color: #2c3e50; margin-bottom: 1rem;">"SHOUT Through Anything"</h4>
-                         <p style="color: #666; margin-bottom: 2rem;">
-                             Get instant access to Chapter 3 of the SHOUT Method ebook. 
-                             This free chapter will help you begin transforming your obstacles into opportunities.
-                         </p>
-                         
-                         <ul class="product-features">
-                             <li>Core SHOUT principles</li>
-                             <li>5-step obstacle transformation process</li>
-                             <li>Real-life examples and case studies</li>
-                             <li>Actionable worksheets</li>
-                             <li>Bonus: Weekly inspiration emails</li>
-                         </ul>
-                         
-                         <!-- Gift Form - Displayed Directly -->
-                         <div id="giftFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef;">
-                             <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get FREE Chap 3, Obstacles to Opportunities, Ebook Guide Now!</h3>
-                             
-                             <button type="button" class="cta-button free" onclick="showEmailForm('chapter3')" style="margin-top: 1rem;">
-                                 <span class="btn-text">GET FREE Chapter 3, Obstacles to Opportunity, of eBook</span>
-                             </button>
-                         </div>
-                     </div>
-                 </div>
-                 
-                 <!-- Ebook Purchase -->
-                 <div class="product-card">
-                     <div class="product-header">
-                         <h3>Complete SHOUT Method</h3>
-                         <div class="product-price">$3.33</div>
-                         <div class="product-original-price">$19.99</div>
-                         <p>Limited time special pricing</p>
-                     </div>
-                     <div class="product-body">
-                         <h4 style="color: #2c3e50; margin-bottom: 1rem;">"SHOUT Method Mastery"</h4>
-                         <p style="color: #666; margin-bottom: 2rem;">
-                             The complete SHOUT Method ebook with detailed strategies, advanced techniques, 
-                             and the full framework that transformed MeMe's life from teacher to filmmaker.
-                         </p>
-                         
-                         <ul class="product-features">
-                             <li>Complete SHOUT framework</li>
-                             <li>Advanced obstacle transformation strategies</li>
-                             <li>Step-by-step implementation guide</li>
-                             <li>Personal development exercises</li>
-                             <li>Success stories and testimonials</li>
-                             <li>Lifetime access to updates</li>
-                             <li>Bonus: SHOUT Method workbook</li>
-                         </ul>
-                         
-                                                   <!-- Email Collection for Ebook -->
-                          <div id="paymentFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef;">
-                              <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center;">Get Entire Ebook Guide Now!</h3>
-                              <p style="color: #666; margin-bottom: 2rem; text-align: center;">Ebook Sales for $3.33</p>
-                              
-                              <button type="button" class="cta-button" onclick="showEmailForm('ebook')" style="font-size: 1.1em; padding: 18px 35px; width: 100%;">
-                                  🚀 GET ENTIRE EBOOK NOW - $3.33 🚀
-                              </button>
-                          </div>
-                     </div>
-                 </div>
-                 
+      <div class="container">
+        <h2 class="section-title">Get Started with SHOUT</h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; color: #666">Choose your path to transformation. Start with the free gift or dive deep with the complete ebook.</p>
 
-             </div>
+        <div class="products-grid">
+          <!-- Free Gift -->
+          <div class="product-card">
+            <div class="product-header">
+              <h3>SHOUT THROUGH ANYTHING eBook, Chapter 3 Only</h3>
+              <div class="product-price">FREE</div>
+              <p>Start your SHOUT journey today</p>
+            </div>
+            <div class="product-body">
+              <h4 style="color: #2c3e50; margin-bottom: 1rem">"SHOUT Through Anything"</h4>
+              <p style="color: #666; margin-bottom: 2rem">Get instant access to Chapter 3 of the SHOUT Method ebook. This free chapter will help you begin transforming your obstacles into opportunities.</p>
+
+              <ul class="product-features">
+                <li>Core SHOUT principles</li>
+                <li>5-step obstacle transformation process</li>
+                <li>Real-life examples and case studies</li>
+                <li>Actionable worksheets</li>
+                <li>Bonus: Weekly inspiration emails</li>
+              </ul>
+
+              <!-- Gift Form - Displayed Directly -->
+              <div id="giftFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center">Get FREE Chap 3, Obstacles to Opportunities, Ebook Guide Now!</h3>
+
+                <button type="button" class="cta-button free" onclick="showEmailForm('chapter3')" style="margin-top: 1rem">
+                  <span class="btn-text">GET FREE Chapter 3, Obstacles to Opportunity, of eBook</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ebook Purchase -->
+          <div class="product-card">
+            <div class="product-header">
+              <h3>Complete SHOUT Method</h3>
+              <div class="product-price">$3.33</div>
+              <div class="product-original-price">$19.99</div>
+              <p>Limited time special pricing</p>
+            </div>
+            <div class="product-body">
+              <h4 style="color: #2c3e50; margin-bottom: 1rem">"SHOUT Method Mastery"</h4>
+              <p style="color: #666; margin-bottom: 2rem">The complete SHOUT Method ebook with detailed strategies, advanced techniques, and the full framework that transformed MeMe's life from teacher to filmmaker.</p>
+
+              <ul class="product-features">
+                <li>Complete SHOUT framework</li>
+                <li>Advanced obstacle transformation strategies</li>
+                <li>Step-by-step implementation guide</li>
+                <li>Personal development exercises</li>
+                <li>Success stories and testimonials</li>
+                <li>Lifetime access to updates</li>
+                <li>Bonus: SHOUT Method workbook</li>
+              </ul>
+
+              <!-- Email Collection for Ebook -->
+              <div id="paymentFormSection" style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 15px; border: 2px solid #e9ecef">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem; text-align: center">Get Entire Ebook Guide Now!</h3>
+                <p style="color: #666; margin-bottom: 2rem; text-align: center">Ebook Sales for $3.33</p>
+
+                <button type="button" class="cta-button" onclick="showEmailForm('ebook')" style="font-size: 1.1em; padding: 18px 35px; width: 100%">🚀 GET ENTIRE EBOOK NOW - $3.33 🚀</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Masterclass Promotion Section -->
-    <section class="section" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white;">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Ready for the Complete SHOUT Experience?</h2>
-            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; opacity: 0.9;">
-                Join the 7-week SHOUT Masterclass and get live Saturday ZOOMS and coaching with MeMe Kelly herself. Transform your obstacles into opportunities with expert guidance and community support.
-            </p>
-            
-            <div style="text-align: center; margin: 3rem 0;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">What You'll Get:</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                        <h4 style="color: #f1c40f; margin-bottom: 0.5rem;">Live ZOOM CALLS & Coaching</h4>
-                        <p>7 weeks of live ZOOM CALLS and group coaching calls with MeMe Kelly</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                        <h4 style="color: #f1c40f; margin-bottom: 0.5rem;">Community Support</h4>
-                        <p>Connect with others on the same transformation journey</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px;">
-                        <h4 style="color: #f1c40f; margin-bottom: 0.5rem;">Complete Framework</h4>
-                        <p>Full SHOUT Method implementation with expert guidance</p>
-                    </div>
-                </div>
-                
-                <a href="masterclass.html" class="cta-button" style="background: white; color: #f39c12; margin-top: 2rem;">
-                    Explore the SHOUT Masterclass
-                </a>
+    <section class="section" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white">
+      <div class="container">
+        <h2 class="section-title" style="color: white">Ready for the Complete SHOUT Experience?</h2>
+        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; opacity: 0.9">Join the 7-week SHOUT Masterclass and get live Saturday ZOOMS and coaching with MeMe Kelly herself. Transform your obstacles into opportunities with expert guidance and community support.</p>
+
+        <div style="text-align: center; margin: 3rem 0">
+          <h3 style="font-size: 1.8rem; margin-bottom: 1rem">What You'll Get:</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0">
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 10px">
+              <h4 style="color: #f1c40f; margin-bottom: 0.5rem">Live ZOOM CALLS & Coaching</h4>
+              <p>7 weeks of live ZOOM CALLS and group coaching calls with MeMe Kelly</p>
             </div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 10px">
+              <h4 style="color: #f1c40f; margin-bottom: 0.5rem">Community Support</h4>
+              <p>Connect with others on the same transformation journey</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 10px">
+              <h4 style="color: #f1c40f; margin-bottom: 0.5rem">Complete Framework</h4>
+              <p>Full SHOUT Method implementation with expert guidance</p>
+            </div>
+          </div>
+
+          <a href="masterclass.html" class="cta-button" style="background: white; color: #f39c12; margin-top: 2rem"> Explore the SHOUT Masterclass </a>
         </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
     <section class="section testimonials-section">
-        <div class="container">
-            <h2 class="section-title">What People Are Saying</h2>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The SHOUT Method completely changed how I approach challenges. What I used to see as roadblocks, 
-                        I now see as stepping stones to something greater."
-                    </div>
-                                         <div class="testimonial-author">- Char K., Entrepreneur</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "MeMe's story is incredible, and her method is even more powerful. This framework helped me 
-                        transform my career obstacles into opportunities I never imagined possible."
-                    </div>
-                                         <div class="testimonial-author">- John W., Creative Professional</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The SHOUT Method isn't just motivational - it's practical and actionable. I've used these 
-                        principles to overcome challenges in both my personal and professional life."
-                    </div>
-                    <div class="testimonial-author">- Jennifer L., Educator</div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">What People Are Saying</h2>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-text">"The SHOUT Method completely changed how I approach challenges. What I used to see as roadblocks, I now see as stepping stones to something greater."</div>
+            <div class="testimonial-author">- Char K., Entrepreneur</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-text">"MeMe's story is incredible, and her method is even more powerful. This framework helped me transform my career obstacles into opportunities I never imagined possible."</div>
+            <div class="testimonial-author">- John W., Creative Professional</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-text">"The SHOUT Method isn't just motivational - it's practical and actionable. I've used these principles to overcome challenges in both my personal and professional life."</div>
+            <div class="testimonial-author">- Jennifer L., Educator</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2025 - 2026 MeMe Kelly. All rights reserved. | Transform obstacles into opportunities with the SHOUT Method.</p>
+      </div>
     </footer>
 
     <script>
-        
-        
-        function handleGiftSubmit(event) {
-            event.preventDefault();
-            
-            // Show loading state
-            const btnText = document.querySelector('.btn-text');
-            const loading = document.querySelector('.loading');
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            
-            btnText.style.display = 'none';
-            loading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                email: document.getElementById('email').value,
-                challenge: document.getElementById('challenge').value,
-                timestamp: new Date().toISOString(),
-                source: 'SHOUT_Method_Page'
-            };
-            
-            // OPTION 1: Mailchimp Integration (Recommended)
-            // Replace 'YOUR_MAILCHIMP_AUDIENCE_ID' with your actual audience ID
-            // Replace 'YOUR_MAILCHIMP_API_KEY' with your actual API key
-            const mailchimpData = {
-                email_address: formData.email,
-                status: 'subscribed',
-                merge_fields: {
-                    FNAME: formData.firstName,
-                    CHALLENGE: formData.challenge || 'Not specified'
-                }
-            };
-            
-            // Mailchimp API call (you'll need to set up CORS or use a service like Netlify Functions)
-            fetch('https://us1.api.mailchimp.com/3.0/lists/a13d8a9e0b/members', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'apikey 9328d1805eda3bf1327f2255808232d9-us14',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(mailchimpData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Mailchimp success:', data);
-                showSuccessMessage();
-            })
-            .catch(error => {
-                console.error('Mailchimp error:', error);
-                // Fallback to local storage if API fails
-                saveToLocalStorage(formData);
-                showSuccessMessage();
-            });
-            
-            // OPTION 2: ConvertKit Integration
-            // const convertkitData = {
-            //     email: formData.email,
-            //     first_name: formData.firstName,
-            //     fields: {
-            //         challenge: formData.challenge || 'Not specified'
-            //     }
-            // };
-            // fetch('https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(convertkitData)
-            // });
-            
-            // OPTION 3: ActiveCampaign Integration
-            // const activeCampaignData = {
-            //     contact: {
-            //         email: formData.email,
-            //         firstName: formData.firstName,
-            //         customField: formData.challenge || 'Not specified'
-            //     }
-            // };
-            // fetch('https://YOUR_ACCOUNT.api-us1.com/api/3/contacts', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Api-Token': 'YOUR_API_TOKEN',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(activeCampaignData)
-            // });
-            
-            // OPTION 4: Google Sheets Integration (via Google Apps Script)
-            // This requires setting up a Google Apps Script web app
-            // fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
-            //     method: 'POST',
-            //     body: JSON.stringify(formData)
-            // });
-            
-            // OPTION 5: Netlify Forms (if hosting on Netlify)
-            // Just add name="contact" to your form and Netlify handles the rest automatically
-            
-            // Fallback: Store in browser localStorage (temporary solution)
-            function saveToLocalStorage(data) {
-                const leads = JSON.parse(localStorage.getItem('shout_leads') || '[]');
-                leads.push(data);
-                localStorage.setItem('shout_leads', JSON.stringify(leads));
-                console.log('Lead saved to localStorage:', data);
-            }
-            
-            function showSuccessMessage() {
-                // Hide form and show success message
-                document.getElementById('giftForm').style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
-                
-                // Track conversion (replace with your analytics)
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {
-                        'send_to': 'YOUR_CONVERSION_ID',
-                        'value': 1,
-                        'currency': 'USD'
-                    });
-                }
-                
-                // Store lead data
-                console.log('Lead captured:', formData);
-            }
-        }
-        
-        
-        
+      function handleGiftSubmit(event) {
+        event.preventDefault()
 
+        // Show loading state
+        const btnText = document.querySelector(".btn-text")
+        const loading = document.querySelector(".loading")
+        const submitBtn = event.target.querySelector('button[type="submit"]')
+
+        btnText.style.display = "none"
+        loading.style.display = "inline"
+        submitBtn.disabled = true
+
+        // Get form data
+        const formData = {
+          firstName: document.getElementById("firstName").value,
+          email: document.getElementById("email").value,
+          challenge: document.getElementById("challenge").value,
+          timestamp: new Date().toISOString(),
+          source: "SHOUT_Method_Page"
+        }
+
+        // OPTION 1: Mailchimp Integration (Recommended)
+        // Replace 'YOUR_MAILCHIMP_AUDIENCE_ID' with your actual audience ID
+        // Replace 'YOUR_MAILCHIMP_API_KEY' with your actual API key
+        const mailchimpData = {
+          email_address: formData.email,
+          status: "subscribed",
+          merge_fields: {
+            FNAME: formData.firstName,
+            CHALLENGE: formData.challenge || "Not specified"
+          }
+        }
+
+        // Mailchimp API call (you'll need to set up CORS or use a service like Netlify Functions)
+        fetch("https://us1.api.mailchimp.com/3.0/lists/a13d8a9e0b/members", {
+          method: "POST",
+          headers: {
+            Authorization: "apikey 9328d1805eda3bf1327f2255808232d9-us14",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(mailchimpData)
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log("Mailchimp success:", data)
+            showSuccessMessage()
+          })
+          .catch(error => {
+            console.error("Mailchimp error:", error)
+            // Fallback to local storage if API fails
+            saveToLocalStorage(formData)
+            showSuccessMessage()
+          })
+
+        // OPTION 2: ConvertKit Integration
+        // const convertkitData = {
+        //     email: formData.email,
+        //     first_name: formData.firstName,
+        //     fields: {
+        //         challenge: formData.challenge || 'Not specified'
+        //     }
+        // };
+        // fetch('https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(convertkitData)
+        // });
+
+        // OPTION 3: ActiveCampaign Integration
+        // const activeCampaignData = {
+        //     contact: {
+        //         email: formData.email,
+        //         firstName: formData.firstName,
+        //         customField: formData.challenge || 'Not specified'
+        //     }
+        // };
+        // fetch('https://YOUR_ACCOUNT.api-us1.com/api/3/contacts', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Api-Token': 'YOUR_API_TOKEN',
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(activeCampaignData)
+        // });
+
+        // OPTION 4: Google Sheets Integration (via Google Apps Script)
+        // This requires setting up a Google Apps Script web app
+        // fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+        //     method: 'POST',
+        //     body: JSON.stringify(formData)
+        // });
+
+        // OPTION 5: Netlify Forms (if hosting on Netlify)
+        // Just add name="contact" to your form and Netlify handles the rest automatically
+
+        // Fallback: Store in browser localStorage (temporary solution)
+        function saveToLocalStorage(data) {
+          const leads = JSON.parse(localStorage.getItem("shout_leads") || "[]")
+          leads.push(data)
+          localStorage.setItem("shout_leads", JSON.stringify(leads))
+          console.log("Lead saved to localStorage:", data)
+        }
+
+        function showSuccessMessage() {
+          // Hide form and show success message
+          document.getElementById("giftForm").style.display = "none"
+          document.getElementById("successMessage").style.display = "block"
+
+          // Track conversion (replace with your analytics)
+          if (typeof gtag !== "undefined") {
+            gtag("event", "conversion", {
+              send_to: "YOUR_CONVERSION_ID",
+              value: 1,
+              currency: "USD"
+            })
+          }
+
+          // Store lead data
+          console.log("Lead captured:", formData)
+        }
+      }
     </script>
 
     <!-- Email Form Modal -->
-    <div id="emailModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeEmailModal()">&times;</span>
-            <h2 id="emailModalTitle">Get Your Free Ebook Guide</h2>
-            <p id="emailModalSubtitle">Enter your email to receive your free guide and be notified when sales begin.</p>
-            
-            <form id="emailForm" onsubmit="handleEmailSubmit(event)">
-                <div class="form-group">
-                    <label for="modalFirstName">First Name *</label>
-                    <input type="text" id="modalFirstName" name="firstName" required placeholder="Enter your first name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalEmail">Email Address *</label>
-                    <input type="email" id="modalEmail" name="email" required placeholder="Enter your best email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="modalChallenge">Current Challenge (Optional)</label>
-                    <input type="text" id="modalChallenge" name="challenge" placeholder="e.g., Career transition, Job loss, Business failure">
-                </div>
-                
-                <button type="submit" class="cta-button" style="margin-top: 1rem; width: 100%;">
-                    <span class="btn-text">Get My Free Guide</span>
-                    <span class="loading" style="display: none;">Sending...</span>
-                </button>
-            </form>
-        </div>
+    <div id="emailModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeEmailModal()">&times;</span>
+        <h2 id="emailModalTitle">Get Your Free Ebook Guide</h2>
+        <p id="emailModalSubtitle">Enter your email to receive your free guide and be notified when sales begin.</p>
+
+        <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+          <div class="form-group">
+            <label for="modalFirstName">First Name *</label>
+            <input type="text" id="modalFirstName" name="firstName" required placeholder="Enter your first name" />
+          </div>
+
+          <div class="form-group">
+            <label for="modalEmail">Email Address *</label>
+            <input type="email" id="modalEmail" name="email" required placeholder="Enter your best email" />
+          </div>
+
+          <div class="form-group">
+            <label for="modalChallenge">Current Challenge (Optional)</label>
+            <input type="text" id="modalChallenge" name="challenge" placeholder="e.g., Career transition, Job loss, Business failure" />
+          </div>
+
+          <button type="submit" class="cta-button" style="margin-top: 1rem; width: 100%">
+            <span class="btn-text">Get My Free Guide</span>
+            <span class="loading" style="display: none">Sending...</span>
+          </button>
+        </form>
+      </div>
     </div>
 
-
-
     <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 2rem;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-        }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+      }
     </style>
 
     <script>
-        let currentProductType = '';
-        
-        function showEmailForm(productType) {
-            currentProductType = productType;
-            
-            // Set modal content based on product type
-            const title = document.getElementById('emailModalTitle');
-            const subtitle = document.getElementById('emailModalSubtitle');
-            
-            if (productType === 'chapter3') {
-                title.textContent = 'Get Your Free Chapter 3 Ebook';
-                subtitle.textContent = 'Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook.';
-            } else if (productType === 'ebook') {
-                title.textContent = 'Get Your Complete Ebook - $3.33';
-                subtitle.textContent = 'Enter your email to receive the complete SHOUT Method ebook for $3.33.';
-            } else if (productType === 'masterclass') {
-                title.textContent = 'Get Your Free Chapter 3 Ebook';
-                subtitle.textContent = 'Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook.';
-            }
-            
-            // Show modal
-            document.getElementById('emailModal').style.display = 'block';
-            
-            // Pre-fill email if available
-            const emailInput = document.getElementById('modalEmailAddress');
-            if (localStorage.getItem('user_email')) {
-                emailInput.value = localStorage.getItem('user_email');
-            }
+      let currentProductType = ""
+
+      function showEmailForm(productType) {
+        currentProductType = productType
+
+        // Set modal content based on product type
+        const title = document.getElementById("emailModalTitle")
+        const subtitle = document.getElementById("emailModalSubtitle")
+
+        if (productType === "chapter3") {
+          title.textContent = "Get Your Free Chapter 3 Ebook"
+          subtitle.textContent = "Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook."
+        } else if (productType === "ebook") {
+          title.textContent = "Get Your Complete Ebook - $3.33"
+          subtitle.textContent = "Enter your email to receive the complete SHOUT Method ebook for $3.33."
+        } else if (productType === "masterclass") {
+          title.textContent = "Get Your Free Chapter 3 Ebook"
+          subtitle.textContent = "Enter your email to receive Chapter 3: Obstacles to Opportunity of the SHOUT Method ebook."
         }
-        
-        function closeEmailModal() {
-            document.getElementById('emailModal').style.display = 'none';
-            document.getElementById('modalEmailForm').reset();
+
+        // Show modal
+        document.getElementById("emailModal").style.display = "block"
+
+        // Pre-fill email if available
+        const emailInput = document.getElementById("modalEmailAddress")
+        if (localStorage.getItem("user_email")) {
+          emailInput.value = localStorage.getItem("user_email")
         }
-        
-        function handleModalEmailSubmit(event) {
-            event.preventDefault();
-            
-            // Show loading state
-            const btnText = event.target.querySelector('.btn-text');
-            const loading = event.target.querySelector('.loading');
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            
-            btnText.style.display = 'none';
-            loading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = {
-                firstName: document.getElementById('modalEmailName').value,
-                email: document.getElementById('modalEmailAddress').value,
-                challenge: document.getElementById('modalChallenge').value,
-                productType: currentProductType,
-                timestamp: new Date().toISOString(),
-                source: 'SHOUT_Method_Page_Email_Form'
-            };
-            
-            // Store email for future use
-            localStorage.setItem('user_email', formData.email);
-            
-            // Submit to Mailchimp
-            submitToMailchimp(formData);
-            
-            // Simulate email submission
-            setTimeout(() => {
-                // Close email modal
-                closeEmailModal();
-                
-                // Show success message
-                showThankYouMessage('Thank you! You have been successfully added to our email list. Check your email for exclusive SHOUT Method content and ebook details.');
-                
-                // Reset button state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }, 1500);
+      }
+
+      function closeEmailModal() {
+        document.getElementById("emailModal").style.display = "none"
+        document.getElementById("modalEmailForm").reset()
+      }
+
+      function handleModalEmailSubmit(event) {
+        event.preventDefault()
+
+        // Show loading state
+        const btnText = event.target.querySelector(".btn-text")
+        const loading = event.target.querySelector(".loading")
+        const submitBtn = event.target.querySelector('button[type="submit"]')
+
+        btnText.style.display = "none"
+        loading.style.display = "inline"
+        submitBtn.disabled = true
+
+        // Get form data
+        const formData = {
+          firstName: document.getElementById("modalEmailName").value,
+          email: document.getElementById("modalEmailAddress").value,
+          challenge: document.getElementById("modalChallenge").value,
+          productType: currentProductType,
+          timestamp: new Date().toISOString(),
+          source: "SHOUT_Method_Page_Email_Form"
         }
-        
-        function showThankYouMessage(message) {
-            // Create modal for thank you message
-            const modal = document.createElement('div');
-            modal.style.cssText = `
+
+        // Store email for future use
+        localStorage.setItem("user_email", formData.email)
+
+        // Submit to Mailchimp
+        submitToMailchimp(formData)
+
+        // Simulate email submission
+        setTimeout(() => {
+          // Close email modal
+          closeEmailModal()
+
+          // Show success message
+          showThankYouMessage("Thank you! You have been successfully added to our email list. Check your email for exclusive SHOUT Method content and ebook details.")
+
+          // Reset button state
+          btnText.style.display = "inline"
+          loading.style.display = "none"
+          submitBtn.disabled = false
+        }, 1500)
+      }
+
+      function showThankYouMessage(message) {
+        // Create modal for thank you message
+        const modal = document.createElement("div")
+        modal.style.cssText = `
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -878,9 +854,9 @@
                 justify-content: center;
                 align-items: center;
                 z-index: 10000;
-            `;
-            
-            modal.innerHTML = `
+            `
+
+        modal.innerHTML = `
                 <div style="
                     background: white;
                     padding: 2rem;
@@ -903,54 +879,56 @@
                         transition: all 0.3s ease;
                     ">Close</button>
                 </div>
-            `;
-            
-            document.body.appendChild(modal);
+            `
+
+        document.body.appendChild(modal)
+      }
+
+      function submitToMailchimp(formData) {
+        const MAILCHIMP_API_KEY = "9328d1805eda3bf1327f2255808232d9-us14"
+        const MAILCHIMP_AUDIENCE_ID = "a13d8a9e0b"
+        const MAILCHIMP_DC = "us1"
+
+        const url = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`
+
+        const data = {
+          email_address: formData.email,
+          status: "subscribed",
+          merge_fields: {
+            FNAME: formData.firstName || "",
+            CHALLENGE: formData.challenge || "",
+            PRODUCT: formData.productType || "",
+            SOURCE: formData.source || "Method Page"
+          }
         }
-        
-        function submitToMailchimp(formData) {
-            const MAILCHIMP_API_KEY = '9328d1805eda3bf1327f2255808232d9-us14';
-            const MAILCHIMP_AUDIENCE_ID = 'a13d8a9e0b';
-            const MAILCHIMP_DC = 'us1';
-            
-            const url = `https://${MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`;
-            
-            const data = {
-                email_address: formData.email,
-                status: 'subscribed',
-                merge_fields: {
-                    FNAME: formData.firstName || '',
-                    CHALLENGE: formData.challenge || '',
-                    PRODUCT: formData.productType || '',
-                    SOURCE: formData.source || 'Method Page'
-                }
-            };
-            
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `apikey ${MAILCHIMP_API_KEY}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+
+        fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `apikey ${MAILCHIMP_API_KEY}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log("Success:", data)
+          })
+          .catch(error => {
+            console.error("Error:", error)
+          })
+      }
+
+      // Close modals when clicking outside
+      window.onclick = function (event) {
+        const emailModal = document.getElementById("emailModal")
+
+        if (event.target === emailModal) {
+          closeEmailModal()
         }
-        
-        // Close modals when clicking outside
-        window.onclick = function(event) {
-            const emailModal = document.getElementById('emailModal');
-            
-            if (event.target === emailModal) {
-                closeEmailModal();
-            }
-        }
+      }
     </script>
-</body>
+
+    <script src="/mobilenav.js"></script>
+  </body>
 </html>

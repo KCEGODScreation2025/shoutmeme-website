@@ -278,6 +278,10 @@
         margin-bottom: 10px;
       }
 
+      .hamburger {
+        display: none;
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .story-grid {
@@ -291,6 +295,24 @@
 
         .nav-menu {
           display: none;
+          flex-direction: column;
+          background-color: #222;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 200px;
+          padding: 1rem;
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        /* Hamburger icon */
+        .hamburger {
+          display: block;
+          font-size: 2rem;
+          cursor: pointer;
         }
       }
     </style>
@@ -300,8 +322,8 @@
     <header class="header">
       <div class="nav-container">
         <div class="logo">MeMe Kelly Presents: SHOUT</div>
-        <nav>
-          <ul class="nav-menu">
+        <nav class="navbar">
+          <ul class="nav-menu" id="nav-links">
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="method_page.html">The Method</a></li>
@@ -311,6 +333,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+        <div class="hamburger" id="hamburger">☰</div>
       </div>
     </header>
 
@@ -434,5 +457,6 @@
     <!-- End Constant Contact Active Forms -->
 
     <script src="/popup.js"></script>
+    <script src="/mobilenav.js"></script>
   </body>
 </html>
