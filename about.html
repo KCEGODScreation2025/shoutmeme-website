@@ -567,9 +567,15 @@
     <section style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); padding: 3rem 0; text-align: center">
       <div class="container">
         <h2 style="color: white; margin-bottom: 1.5rem; font-size: 2rem">Media Resources</h2>
-        <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9">Access MeMe's official media kit for press inquiries, interviews, and promotional materials.</p>
-        <a href="#" id="mediaKitLink" style="background: white; color: #f39c12; padding: 1rem 2rem; border-radius: 50px; font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s ease" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'"> 📄 MeMe's Media Kit </a>
-        <p style="color: white; font-size: 0.9rem; margin-top: 1rem; opacity: 0.8">(Media Kit file will be available soon)</p>
+        <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9">Access MeMe's official media kit and media appearances for press inquiries, interviews, and promotional materials.</p>
+        
+        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem">
+          <button onclick="openMediaAppearances()" style="background: white; color: #f39c12; padding: 1rem 2rem; border-radius: 50px; font-size: 1.1rem; font-weight: bold; border: none; cursor: pointer; display: inline-block; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s ease" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'"> 📺 Media Appearances </button>
+          
+          <button onclick="openMediaKit()" style="background: white; color: #f39c12; padding: 1rem 2rem; border-radius: 50px; font-size: 1.1rem; font-weight: bold; border: none; cursor: pointer; display: inline-block; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s ease" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'"> 📄 Media Kit </button>
+        </div>
+        
+        <p style="color: white; font-size: 0.9rem; margin-top: 1rem; opacity: 0.8">Click to view Media Appearances or Media Kit</p>
       </div>
     </section>
 
@@ -580,6 +586,17 @@
       </div>
     </footer>
 
+    <script>
+      function openMediaAppearances() {
+        // Open Media Appearances PDF in new tab
+        window.open('mediaappearances.pdf', '_blank');
+      }
+      
+      function openMediaKit() {
+        // Open Media Kit PDF in new tab
+        window.open('Neutral Minimal Media Press Kit Presentation.pdf', '_blank');
+      }
+    </script>
     <script src="/mobilenav.js"></script>
   </body>
 </html>
