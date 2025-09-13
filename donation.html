@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Buttons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .donation-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .donation-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        }
+        
+        .heart-beat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .support-text {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Support Our Mission</h1>
+            <p class="text-gray-600 text-lg">Help us create opportunities and make a difference in the entertainment industry</p>
+        </div>
+
+        <!-- Every Night in LA Production Donation -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-100">
+            <div class="text-center">
+                <div class="mb-4">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Every Night in LA Production</h2>
+                    <p class="text-gray-600 mb-6">Supporting innovative entertainment projects and creative storytelling</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://donate.stripe.com/3cI6oI3Dw9A49qig7P4Ni06" class="donation-button text-white font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center space-x-3 min-w-[200px] justify-center">
+                        <span class="heart-beat">❤️</span>
+                        <span>Donate Now</span>
+                    </a>
+                    
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">🎬 Film</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">📺 Production</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">✨ Creative</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perfect Production Assistants Donation -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-100">
+            <div class="text-center">
+                <div class="mb-4">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Perfect Production Assistants</h2>
+                    <h3 class="text-xl font-semibold support-text mb-3">on the Autism Spectrum</h3>
+                    <p class="text-gray-600 mb-6">Empowering neurodivergent individuals with meaningful career opportunities in entertainment</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://donate.stripe.com/7sY5kEca227CdGydZH4Ni07" class="donation-button text-white font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center space-x-3 min-w-[200px] justify-center">
+                        <span class="heart-beat">🤝</span>
+                        <span>Support Our Mission</span>
+                    </a>
+                    
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">♿ Inclusion</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">💼 Careers</span>
+                        <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">🧩 Autism</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+                    <p class="text-sm text-gray-700 italic">
+                        "Creating pathways for neurodivergent professionals to thrive in the entertainment industry"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combined Support Option -->
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl shadow-lg p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-3">Support Both Initiatives</h2>
+            <p class="mb-6 opacity-90">Make a bigger impact by supporting both Every Night in LA Production and Perfect Production Assistants</p>
+            
+            <a href="https://donate.stripe.com/9B614o7TMh2w0TMdZH4Ni08" class="bg-white text-purple-600 font-semibold py-4 px-8 rounded-full text-lg inline-flex items-center space-x-3 hover:bg-gray-50 transition-all duration-300 hover:transform hover:scale-105">
+                <span>🌟</span>
+                <span>Double Impact Donation</span>
+            </a>
+        </div>
+
+        <div class="text-center mt-8 text-gray-500 text-sm">
+            <p>Your contribution helps create inclusive opportunities and supports innovative entertainment projects.</p>
+            <p class="mt-2">Tax-deductible donations • Secure payment processing</p>
+        </div>
+    </div>
+</body>
+</html>
